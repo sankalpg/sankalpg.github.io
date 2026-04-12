@@ -1,0 +1,46 @@
+---
+const socials = [
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/sankalpgulati/' },
+  { label: 'GitHub', href: 'https://github.com/sankalpg' },
+  { label: 'Scholar', href: 'https://scholar.google.com/citations?user=rJSKxAMAAAAJ&hl=en' },
+  { label: 'SoundCloud', href: 'https://soundcloud.com/sankalpg' },
+];
+---
+<footer class="footer" id="contact">
+  <div class="container footer__inner">
+    <span class="footer__copy">sankalpg.github.io</span>
+    <ul class="footer__socials">
+      {socials.map(s => (
+        <li><a href={s.href} target="_blank" rel="noopener">{s.label}</a></li>
+      ))}
+    </ul>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--navy);
+    color: var(--white);
+    padding: 20px 0;
+  }
+  .footer__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer__copy {
+    font-size: 11px;
+    opacity: 0.4;
+  }
+  .footer__socials {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+  }
+  .footer__socials a {
+    color: var(--white);
+    font-size: 11px;
+    opacity: 0.6;
+  }
+  .footer__socials a:hover { opacity: 1; text-decoration: none; }
+</style>

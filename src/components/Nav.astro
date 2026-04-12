@@ -1,0 +1,61 @@
+---
+const links = [
+  { label: 'Work', href: '/work' },
+  { label: 'Research', href: '/research' },
+  { label: 'Projects', href: '/projects' },
+  { label: 'Contact', href: '#contact' },
+];
+const current = Astro.url.pathname;
+---
+<nav class="nav">
+  <div class="container nav__inner">
+    <a href="/" class="nav__logo">SANKALP GULATI</a>
+    <ul class="nav__links">
+      {links.map(l => (
+        <li>
+          <a href={l.href} class:list={['nav__link', { 'nav__link--active': current === l.href }]}>
+            {l.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</nav>
+
+<style>
+  .nav {
+    background: var(--navy);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 52px;
+  }
+  .nav__logo {
+    color: var(--white);
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+  }
+  .nav__logo:hover { text-decoration: none; }
+  .nav__links {
+    display: flex;
+    list-style: none;
+    gap: 24px;
+  }
+  .nav__link {
+    color: var(--white);
+    font-size: 12px;
+    opacity: 0.7;
+    transition: opacity 0.15s;
+  }
+  .nav__link:hover,
+  .nav__link--active {
+    opacity: 1;
+    text-decoration: none;
+  }
+</style>
