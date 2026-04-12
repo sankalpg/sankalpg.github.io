@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import projects from '../content/projects.json';
+---
+<BaseLayout title="Projects — Sankalp Gulati">
+  <div class="container section">
+    <div class="section__header">
+      <h1 class="section__title">Projects</h1>
+    </div>
+    <div class="projects-grid">
+      {projects.map(p => (
+        <ProjectCard
+          title={p.title}
+          description={p.description}
+          url={p.url || undefined}
+          tags={p.tags}
+        />
+      ))}
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+  }
+</style>

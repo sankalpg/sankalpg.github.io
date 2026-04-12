@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import WorkCard from '../components/WorkCard.astro';
+import work from '../content/work.json';
+---
+<BaseLayout title="Work — Sankalp Gulati" description="Work experience of Sankalp Gulati.">
+  <div class="container section">
+    <div class="section__header">
+      <h1 class="section__title">Work</h1>
+    </div>
+    <div>
+      {work.map(entry => (
+        <WorkCard
+          company={entry.company}
+          role={entry.role}
+          period={entry.period}
+          description={entry.description}
+          url={entry.url || undefined}
+        />
+      ))}
+    </div>
+  </div>
+</BaseLayout>

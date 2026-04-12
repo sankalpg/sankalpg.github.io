@@ -1,0 +1,50 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  url?: string;
+  tags: string[];
+}
+const { title, description, url, tags } = Astro.props;
+---
+<div class="project-card">
+  <div class="project-card__header">
+    {url
+      ? <a href={url} target="_blank" rel="noopener" class="project-card__title">{title}</a>
+      : <span class="project-card__title">{title}</span>
+    }
+  </div>
+  <p class="project-card__desc">{description}</p>
+  <div class="project-card__tags">
+    {tags.map(t => <span class="tag">{t}</span>)}
+  </div>
+</div>
+
+<style>
+  .project-card {
+    background: var(--off-white);
+    border: 1px solid var(--gray-300);
+    border-radius: 4px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .project-card__title {
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--navy);
+  }
+  a.project-card__title:hover { text-decoration: underline; }
+  .project-card__desc {
+    font-size: 13px;
+    color: var(--gray-700);
+    line-height: 1.6;
+    flex: 1;
+  }
+  .project-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+</style>

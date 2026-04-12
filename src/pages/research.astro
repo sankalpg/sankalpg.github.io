@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ResearchTabs from '../components/ResearchTabs.astro';
+import ResearchEntryRow from '../components/ResearchEntryRow.astro';
+import healthData from '../content/research-health.json';
+import musicData from '../content/research-music.json';
+
+const scholarUrl = 'https://scholar.google.com/citations?user=rJSKxAMAAAAJ&hl=en';
+
+type UrlStatus = 'ok' | 'possibly_blocked' | 'dead';
+type EntryType = 'spotlight' | 'paper' | 'thesis';
+
+// Group music papers by year descending
+const byYear: Record<number, typeof musicData.papers> = {};
+for (const p of musicData.papers) {
+  if (!byYear[p.year]) byYear[p.year] = [];
+  byYear[p.year].push(p);
+}
+const years = Object.keys(byYear).map(Number).sort((a, b) => b - a);
+---
+<BaseLayout title="Research — Sankalp Gulati">
+  <div class="container section">
+    <div class="section__header">
+      <h1 class="section__title">Research</h1>
+      <a href={scholarUrl} target="_blank" rel="noopener" class="section__link">Google Scholar →</a>
+    </div>
+
+    <ResearchTabs>
+      <div slot="health">
+        <p class="tab-note">Work conducted at EkaCare. Building sovereign AI for Indian healthcare.</p>
+        {healthData.map(entry => (
+          <ResearchEntryRow
+            title={entry.title}
+            url={entry.url}
+            urlStatus={entry.urlStatus as UrlStatus}
+            description={entry.description}
+            attribution={entry.attribution}
+            type={entry.type as EntryType}
+          />
+        ))}
+      </div>
+
+      <div slot="music">
+        <h3 class="subsection-title">Theses</h3>
+        {musicData.theses.map(t => (
+          <ResearchEntryRow
+            title={t.title}
+            year={t.year}
+            venue={t.venue}
+            url={t.url}
+            urlStatus={t.urlStatus as UrlStatus}
+            type="thesis"
+          />
+        ))}
+
+        {years.map(year => (
+          <div class="year-group">
+            <h3 class="year-label">{year}</h3>
+            {byYear[year].map(p => (
+              <ResearchEntryRow
+                title={p.title}
+                year={p.year}
+                venue={p.venue}
+                url={p.url}
+                urlStatus={p.urlStatus as UrlStatus}
+                type="paper"
+              />
+            ))}
+          </div>
+        ))}
+      </div>
+    </ResearchTabs>
+  </div>
+</BaseLayout>
+
+<style>
+  .tab-note {
+    font-size: 13px;
+    color: var(--gray-700);
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+  .subsection-title {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray-500);
+    margin: 24px 0 8px;
+  }
+  .year-group { margin-top: 8px; }
+  .year-label {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray-500);
+    margin: 20px 0 4px;
+  }
+</style>

@@ -1,0 +1,67 @@
+---
+interface Props {
+  title: string;
+  year?: number;
+  venue?: string;
+  url: string;
+  urlStatus: 'ok' | 'possibly_blocked' | 'dead';
+  attribution?: string;
+  description?: string;
+  type: 'spotlight' | 'paper' | 'thesis';
+}
+const { title, year, venue, url, urlStatus, attribution, description } = Astro.props;
+const showLink = urlStatus !== 'dead' && url;
+---
+<div class="entry">
+  <div class="entry__main">
+    {showLink
+      ? <a href={url} target="_blank" rel="noopener" class="entry__title">{title}</a>
+      : <span class="entry__title entry__title--dead">{title}</span>
+    }
+    {(venue || year) && (
+      <span class="entry__meta">
+        {venue && <span>{venue}</span>}
+        {year && <span>{year}</span>}
+      </span>
+    )}
+    {description && <p class="entry__desc">{description}</p>}
+    {attribution && <span class="tag">{attribution}</span>}
+    {urlStatus === 'dead' && <span class="entry__unavailable">PDF unavailable</span>}
+  </div>
+</div>
+
+<style>
+  .entry {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--gray-300);
+  }
+  .entry:last-child { border-bottom: none; }
+  .entry__title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.4;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .entry__title--dead { opacity: 0.5; cursor: default; }
+  a.entry__title:hover { text-decoration: underline; }
+  .entry__meta {
+    display: flex;
+    gap: 12px;
+    font-size: 11px;
+    color: var(--gray-500);
+    margin-bottom: 4px;
+  }
+  .entry__desc {
+    font-size: 12px;
+    color: var(--gray-700);
+    line-height: 1.5;
+    margin-top: 4px;
+  }
+  .entry__unavailable {
+    font-size: 10px;
+    color: var(--gray-500);
+    font-style: italic;
+  }
+</style>

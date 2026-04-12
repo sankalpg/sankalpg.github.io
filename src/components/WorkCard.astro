@@ -1,0 +1,57 @@
+---
+interface Props {
+  company: string;
+  role: string;
+  period: string;
+  description: string;
+  url?: string;
+}
+const { company, role, period, description, url } = Astro.props;
+---
+<div class="work-card">
+  <div class="work-card__meta">
+    <span class="work-card__period">{period}</span>
+  </div>
+  <div class="work-card__body">
+    <div class="work-card__header">
+      {url
+        ? <a href={url} target="_blank" rel="noopener" class="work-card__company">{company}</a>
+        : <span class="work-card__company">{company}</span>
+      }
+      <span class="work-card__role">{role}</span>
+    </div>
+    <p class="work-card__desc">{description}</p>
+  </div>
+</div>
+
+<style>
+  .work-card {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--gray-300);
+  }
+  .work-card:last-child { border-bottom: none; }
+  .work-card__period {
+    font-size: 11px;
+    color: var(--gray-500);
+    padding-top: 3px;
+  }
+  .work-card__company {
+    font-weight: 800;
+    font-size: 15px;
+    color: var(--navy);
+  }
+  .work-card__role {
+    font-size: 13px;
+    color: var(--gray-700);
+    margin-left: 8px;
+  }
+  .work-card__desc {
+    font-size: 13px;
+    color: var(--gray-700);
+    line-height: 1.6;
+    margin-top: 6px;
+  }
+</style>
