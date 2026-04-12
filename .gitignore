@@ -3,3 +3,5 @@ dist/
 node_modules/
 .superpowers/
 .worktrees/
+profile_pic/
+cv/
