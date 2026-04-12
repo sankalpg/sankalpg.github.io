@@ -1,6 +1,96 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import HomeSectionPreview from '../components/HomeSectionPreview.astro';
+import WorkCard from '../components/WorkCard.astro';
+import ResearchEntryRow from '../components/ResearchEntryRow.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+
+import work from '../content/work.json';
+import healthData from '../content/research-health.json';
+import musicData from '../content/research-music.json';
+import projects from '../content/projects.json';
+
+type UrlStatus = 'ok' | 'possibly_blocked' | 'dead';
+type EntryType = 'spotlight' | 'paper' | 'thesis';
+
+const topWork = work.slice(0, 2);
+const topHealth = healthData.slice(0, 3);
+const topMusic = musicData.papers.slice(0, 2);
+const topProjects = projects.slice(0, 3);
 ---
-<BaseLayout title="Sankalp Gulati">
-  <p style="padding: 40px 24px;">Content coming soon.</p>
+<BaseLayout title="Sankalp Gulati — AI Researcher & Data Scientist">
+  <Hero />
+
+  <HomeSectionPreview title="Work" href="/work">
+    {topWork.map(entry => (
+      <WorkCard
+        company={entry.company}
+        role={entry.role}
+        period={entry.period}
+        description={entry.description}
+        url={entry.url || undefined}
+      />
+    ))}
+  </HomeSectionPreview>
+
+  <HomeSectionPreview title="Research" href="/research" alt>
+    <div class="research-preview">
+      <div class="research-preview__col">
+        <p class="label" style="color: var(--accent-health); margin-bottom: 12px;">Health Tech</p>
+        {topHealth.map(e => (
+          <ResearchEntryRow
+            title={e.title}
+            url={e.url}
+            urlStatus={e.urlStatus as UrlStatus}
+            attribution={e.attribution}
+            type={e.type as EntryType}
+          />
+        ))}
+      </div>
+      <div class="research-preview__col">
+        <p class="label" style="color: var(--accent-music); margin-bottom: 12px;">Music AI</p>
+        {topMusic.map(p => (
+          <ResearchEntryRow
+            title={p.title}
+            year={p.year}
+            venue={p.venue}
+            url={p.url}
+            urlStatus={p.urlStatus as UrlStatus}
+            type="paper"
+          />
+        ))}
+      </div>
+    </div>
+  </HomeSectionPreview>
+
+  <HomeSectionPreview title="Projects" href="/projects">
+    <div class="projects-preview">
+      {topProjects.map(p => (
+        <ProjectCard
+          title={p.title}
+          description={p.description}
+          url={p.url || undefined}
+          tags={p.tags}
+        />
+      ))}
+    </div>
+  </HomeSectionPreview>
 </BaseLayout>
+
+<style>
+  .research-preview {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .projects-preview {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  @media (max-width: 640px) {
+    .research-preview { grid-template-columns: 1fr; }
+    .projects-preview { grid-template-columns: 1fr; }
+  }
+</style>

@@ -1,0 +1,21 @@
+---
+interface Props {
+  title: string;
+  href: string;
+  alt?: boolean;
+}
+const { title, href, alt = false } = Astro.props;
+---
+<section class:list={['home-section', { 'section--alt': alt }]}>
+  <div class="container">
+    <div class="section__header">
+      <span class="section__title">{title}</span>
+      <a href={href} class="section__link">View all →</a>
+    </div>
+    <slot />
+  </div>
+</section>
+
+<style>
+  .home-section { padding: 48px 0; }
+</style>
