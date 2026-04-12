@@ -1,0 +1,37 @@
+[
+  {
+    "id": "ragawise",
+    "title": "Ragawise",
+    "description": "Interactive raga recognition demo built on CompMusic research. Identifies ragas from audio in real time.",
+    "url": "https://dunya.compmusic.upf.edu/ragawise/",
+    "tags": ["music-ai", "demo", "research"]
+  },
+  {
+    "id": "yin-js",
+    "title": "YIN.js",
+    "description": "JavaScript implementation of the YIN pitch detection algorithm for real-time pitch tracking in the browser.",
+    "url": "https://github.com/sankalpg/YIN.js",
+    "tags": ["open-source", "javascript", "music"]
+  },
+  {
+    "id": "musicmuni",
+    "title": "MusicMuni Labs",
+    "description": "Co-founded a music technology startup building AI-powered learning and discovery tools for Indian classical music.",
+    "url": "",
+    "tags": ["startup", "music-ai", "india"]
+  },
+  {
+    "id": "dunya",
+    "title": "Dunya",
+    "description": "Web platform for exploring CompMusic's Indian art music corpora — melodic analysis, raga recognition, and music browsing.",
+    "url": "https://dunya.compmusic.upf.edu/",
+    "tags": ["research", "music-ai", "platform"]
+  },
+  {
+    "id": "jingju-tutorial",
+    "title": "Jingju Melodic Description Tutorial",
+    "description": "Code and tutorial for melodic description of Jingju (Peking Opera) music, presented at ISMIR.",
+    "url": "http://compmusic.upf.edu/jingju-tutorial",
+    "tags": ["research", "music-ai", "tutorial"]
+  }
+]

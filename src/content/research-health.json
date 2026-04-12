@@ -1,0 +1,101 @@
+[
+  {
+    "id": "parrotlet-a2",
+    "type": "spotlight",
+    "title": "Parrotlet-A 2 Pro: The Most Performant Speech Recognition Model for Indian Healthcare",
+    "description": "Releasing the gold standard for medical speech recognition in Indian healthcare.",
+    "url": "https://info.eka.care/services/releasing-parrotlet-a-v2-the-gold-standard-for-medical-speech-recognition-in-indian-healthcare",
+    "urlStatus": "ok",
+    "attribution": "EkaCare"
+  },
+  {
+    "id": "karma",
+    "type": "spotlight",
+    "title": "Introducing KARMA – OpenMedEvalKit",
+    "description": "An open-source framework for evaluating medical AI systems.",
+    "url": "https://info.eka.care/services/introducing-karma-openmedevalkit-an-open-source-framework-for-medical-ai-evaluation",
+    "urlStatus": "ok",
+    "attribution": "EkaCare"
+  },
+  {
+    "id": "parrotlet-e",
+    "type": "spotlight",
+    "title": "Parrotlet-E & Eka IndicMTEB",
+    "description": "Bridging India's multilingual healthcare gap with multilingual embeddings and benchmarks.",
+    "url": "https://info.eka.care/services/introducing-parrotlet-e-and-eka-indicmteb-bridging-indias-multilingual-healthcare-gap",
+    "urlStatus": "ok",
+    "attribution": "EkaCare"
+  },
+  {
+    "id": "semantic-wer",
+    "type": "spotlight",
+    "title": "Beyond Traditional WER: Semantic WER for ASR",
+    "description": "New evaluation metrics for speech recognition in healthcare contexts.",
+    "url": "https://info.eka.care/services/beyond-traditional-wer-the-critical-need-for-semantic-wer-in-asr-for-indian-healthcare",
+    "urlStatus": "ok",
+    "attribution": "EkaCare"
+  },
+  {
+    "id": "parrotlet-v",
+    "type": "spotlight",
+    "title": "Parrotlet-V Lite (4B) – Vision LLM for Medical Records",
+    "description": "Purpose-built vision LLM for parsing and extracting data from medical documents.",
+    "url": "https://info.eka.care/services/parrotlet-v-lite-4b-releasing-our-purpose-built-vision-llm-for-parsing-medical-records",
+    "urlStatus": "ok",
+    "attribution": "EkaCare"
+  },
+  {
+    "id": "parrotlet-a-en",
+    "type": "spotlight",
+    "title": "Parrotlet-A EN (5B) – English Medical ASR LLM",
+    "description": "Purpose-built LLM for English ASR in Indian healthcare settings.",
+    "url": "https://info.eka.care/services/parrotlet-a-en-5b-releasing-our-purpose-built-llm-for-english-asr-in-indian-healthcare",
+    "urlStatus": "ok",
+    "attribution": "EkaCare"
+  },
+  {
+    "id": "eval-datasets",
+    "type": "spotlight",
+    "title": "Advancing Healthcare AI Evaluation in India",
+    "description": "EkaCare releases four evaluation datasets for medical AI systems.",
+    "url": "https://info.eka.care/services/advancing-healthcare-ai-evaluation-in-india-ekacare-releases-four-evaluation-datasets",
+    "urlStatus": "ok",
+    "attribution": "EkaCare"
+  },
+  {
+    "id": "small-llms",
+    "type": "spotlight",
+    "title": "Lab-Ready and Prescription-Perfect: Eka's Small LLMs vs. Industry Giants",
+    "description": "Comparative analysis of specialized small models versus general-purpose AI for healthcare tasks.",
+    "url": "https://info.eka.care/services/lab-ready-and-prescription-perfect-ekas-small-llms-vs-industry-giants",
+    "urlStatus": "ok",
+    "attribution": "EkaCare"
+  },
+  {
+    "id": "lab-reports",
+    "type": "spotlight",
+    "title": "Extracting Structured Information from Lab Reports",
+    "description": "Challenges and learnings from extracting structured data from medical lab reports.",
+    "url": "https://info.eka.care/services/eka-smart-report",
+    "urlStatus": "ok",
+    "attribution": "EkaCare"
+  },
+  {
+    "id": "ontologies",
+    "type": "spotlight",
+    "title": "Leveraging Semantic Technologies in Healthcare",
+    "description": "Ontology applications in medical contexts for knowledge representation.",
+    "url": "https://info.eka.care/services/leveraging-ontologies-in-health-care",
+    "urlStatus": "ok",
+    "attribution": "EkaCare"
+  },
+  {
+    "id": "annual-report-2022",
+    "type": "spotlight",
+    "title": "Annual Health Report – India 2022",
+    "description": "EkaCare's annual data-driven health report for India.",
+    "url": "https://c.eka.care/insights_2022.pdf",
+    "urlStatus": "ok",
+    "attribution": "EkaCare"
+  }
+]

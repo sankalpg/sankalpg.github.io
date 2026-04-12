@@ -1,0 +1,190 @@
+{
+  "theses": [
+    {
+      "id": "phd-2016",
+      "title": "Computational Approaches for Melodic Description in Indian Art Music Corpora",
+      "year": 2016,
+      "venue": "PhD Dissertation, Music Technology Group, Universitat Pompeu Fabra",
+      "url": "https://www.tdx.cat/handle/10803/398984",
+      "urlStatus": "ok"
+    },
+    {
+      "id": "msc-2012",
+      "title": "A Tonic Identification Approach for Indian Art Music",
+      "year": 2012,
+      "venue": "Master's Dissertation, Music Technology Group, Universitat Pompeu Fabra",
+      "url": "https://scholar.google.com/citations?user=rJSKxAMAAAAJ&hl=en",
+      "urlStatus": "possibly_blocked"
+    }
+  ],
+  "papers": [
+    {
+      "id": "ismir2016-raga",
+      "title": "Time-delayed Melody Surfaces for Raga Recognition",
+      "year": 2016,
+      "venue": "ISMIR",
+      "url": "https://scholar.google.com/citations?user=rJSKxAMAAAAJ&hl=en",
+      "urlStatus": "possibly_blocked"
+    },
+    {
+      "id": "ismir2016-hindustani",
+      "title": "Data-driven Exploration of Melodic Structures in Hindustani Music",
+      "year": 2016,
+      "venue": "ISMIR",
+      "url": "https://scholar.google.com/citations?user=rJSKxAMAAAAJ&hl=en",
+      "urlStatus": "possibly_blocked"
+    },
+    {
+      "id": "icassp2016-phrase",
+      "title": "Phrase-based Rāga Recognition Using Vector Space Modelling",
+      "year": 2016,
+      "venue": "ICASSP",
+      "url": "https://scholar.google.com/citations?user=rJSKxAMAAAAJ&hl=en",
+      "urlStatus": "possibly_blocked"
+    },
+    {
+      "id": "icassp2016-motif",
+      "title": "Discovering Rāga Motifs by Characterizing Communities in Networks of Melodic Patterns",
+      "year": 2016,
+      "venue": "ICASSP",
+      "url": "https://scholar.google.com/citations?user=rJSKxAMAAAAJ&hl=en",
+      "urlStatus": "possibly_blocked"
+    },
+    {
+      "id": "icassp2015-eval",
+      "title": "An Evaluation of Methodologies for Melodic Similarity in Audio Recordings of Indian Art Music",
+      "year": 2015,
+      "venue": "ICASSP",
+      "url": "https://scholar.google.com/citations?user=rJSKxAMAAAAJ&hl=en",
+      "urlStatus": "possibly_blocked"
+    },
+    {
+      "id": "ismir2015-melodic",
+      "title": "Improving Melodic Similarity in Indian Art Music Using Culture-specific Melodic Characteristics",
+      "year": 2015,
+      "venue": "ISMIR",
+      "url": "https://scholar.google.com/citations?user=rJSKxAMAAAAJ&hl=en",
+      "urlStatus": "possibly_blocked"
+    },
+    {
+      "id": "sitis2014-mining",
+      "title": "Mining Melodic Patterns in Large Audio Collections of Indian Art Music",
+      "year": 2014,
+      "venue": "SITIS",
+      "url": "https://scholar.google.com/citations?user=rJSKxAMAAAAJ&hl=en",
+      "urlStatus": "possibly_blocked"
+    },
+    {
+      "id": "smc2014-nyas",
+      "title": "Landmark Detection in Hindustani Music Melodies",
+      "year": 2014,
+      "venue": "ICMC-SMC",
+      "url": "https://scholar.google.com/citations?user=rJSKxAMAAAAJ&hl=en",
+      "urlStatus": "possibly_blocked"
+    },
+    {
+      "id": "smc2014-corpora",
+      "title": "Corpora for Music Information Research in Indian Art Music",
+      "year": 2014,
+      "venue": "ICMC-SMC",
+      "url": "https://scholar.google.com/citations?user=rJSKxAMAAAAJ&hl=en",
+      "urlStatus": "possibly_blocked"
+    },
+    {
+      "id": "jnmr2014-tonic",
+      "title": "Automatic Tonic Identification in Indian Art Music: Approaches and Evaluation",
+      "year": 2014,
+      "venue": "Journal of New Music Research",
+      "url": "https://scholar.google.com/citations?user=rJSKxAMAAAAJ&hl=en",
+      "urlStatus": "possibly_blocked"
+    },
+    {
+      "id": "ismir2013-essentia",
+      "title": "Essentia: An Audio Analysis Library for Music Information Retrieval",
+      "year": 2013,
+      "venue": "ISMIR",
+      "url": "http://hdl.handle.net/10230/32252",
+      "urlStatus": "ok"
+    },
+    {
+      "id": "acmmm2013-essentia",
+      "title": "Essentia: An Open-source Library for Sound and Music Analysis",
+      "year": 2013,
+      "venue": "ACM Multimedia",
+      "url": "https://scholar.google.com/citations?user=rJSKxAMAAAAJ&hl=en",
+      "urlStatus": "possibly_blocked"
+    },
+    {
+      "id": "ismir2013-makam",
+      "title": "Score Informed Tonic Identification for Makam Music of Turkey",
+      "year": 2013,
+      "venue": "ISMIR",
+      "url": "http://hdl.handle.net/10230/27728",
+      "urlStatus": "ok"
+    },
+    {
+      "id": "jnmr2012-raga",
+      "title": "Rāga Recognition based on Pitch Distribution Methods",
+      "year": 2012,
+      "venue": "Journal of New Music Research",
+      "url": "http://hdl.handle.net/10230/32476",
+      "urlStatus": "ok"
+    },
+    {
+      "id": "compmusic2012-tonic",
+      "title": "A Two-stage Approach for Tonic Identification in Indian Art Music",
+      "year": 2012,
+      "venue": "CompMusic Workshop",
+      "url": "http://hdl.handle.net/10230/20370",
+      "urlStatus": "ok"
+    },
+    {
+      "id": "lncs2012-meter",
+      "title": "Meter Detection from Audio for Indian Music",
+      "year": 2012,
+      "venue": "LNCS",
+      "url": "http://dx.doi.org/10.1007/978-3-642-31980-8_3",
+      "urlStatus": "ok"
+    },
+    {
+      "id": "ismir2012-multipitch",
+      "title": "A Multipitch Approach to Tonic Identification in Indian Classical Music",
+      "year": 2012,
+      "venue": "ISMIR",
+      "url": "http://hdl.handle.net/10230/20493",
+      "urlStatus": "ok"
+    },
+    {
+      "id": "compmusic2012-browsing",
+      "title": "A Musically Aware System for Browsing and Interacting with Audio Music Collections",
+      "year": 2012,
+      "venue": "CompMusic Workshop",
+      "url": "http://hdl.handle.net/10230/20493",
+      "urlStatus": "ok"
+    },
+    {
+      "id": "iitm2010-rhythm",
+      "title": "Rhythm Pattern Representations for Tempo Detection in Music",
+      "year": 2010,
+      "venue": "IITM",
+      "url": "https://scholar.google.com/citations?user=rJSKxAMAAAAJ&hl=en",
+      "urlStatus": "possibly_blocked"
+    },
+    {
+      "id": "smc2011-survey",
+      "title": "A Survey of Rāga Recognition Techniques and Improvements to the State-of-the-Art",
+      "year": 2011,
+      "venue": "SMC",
+      "url": "",
+      "urlStatus": "dead"
+    },
+    {
+      "id": "ncc2011-genre",
+      "title": "Automatic Genre Classification of North Indian Devotional Music",
+      "year": 2011,
+      "venue": "NCC",
+      "url": "https://scholar.google.com/citations?user=rJSKxAMAAAAJ&hl=en",
+      "urlStatus": "possibly_blocked"
+    }
+  ]
+}

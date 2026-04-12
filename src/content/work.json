@@ -1,0 +1,42 @@
+[
+  {
+    "id": "ekacare",
+    "company": "EkaCare",
+    "role": "Chief Data Scientist",
+    "period": "2021 – present",
+    "description": "Building purpose-driven sovereign LLMs for healthcare in India. Leading AI research across medical ASR, vision models, clinical NLP, and evaluation frameworks.",
+    "url": "https://eka.care"
+  },
+  {
+    "id": "musicmuni",
+    "company": "MusicMuni Labs",
+    "role": "Co-founder",
+    "period": "2016 – 2020",
+    "description": "Co-founded a music technology startup focused on AI-driven music learning and discovery tools for Indian classical music.",
+    "url": ""
+  },
+  {
+    "id": "sensibol",
+    "company": "Sensibol Audio Technologies",
+    "role": "Research Scientist",
+    "period": "2016 – 2021",
+    "description": "Audio AI research and product development. Worked on pitch analysis, singing assessment, and audio processing pipelines.",
+    "url": "https://sensibol.com"
+  },
+  {
+    "id": "daplab",
+    "company": "DAPLab, IIT Bombay",
+    "role": "Research Intern",
+    "period": "2010 – 2011",
+    "description": "Research internship in digital audio processing and music information retrieval.",
+    "url": ""
+  },
+  {
+    "id": "ittiam",
+    "company": "ITTIAM Systems",
+    "role": "Engineer",
+    "period": "2008 – 2010",
+    "description": "Audio and video codec development.",
+    "url": "https://www.ittiam.com"
+  }
+]
