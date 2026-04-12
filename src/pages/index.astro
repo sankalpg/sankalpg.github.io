@@ -11,7 +11,7 @@ import altData from '../content/alternate-data.json';
 
 const topWork = work.slice(0, 2);
 const topApps = healthApps.slice(0, 3);
-const topMusicProjects = musicProjects.slice(0, 3);
+const topMusicProjects = [...musicProjects.projects.slice(0, 2), ...musicProjects.hacks.slice(0, 1)];
 const topAlt = altData.slice(0, 2);
 ---
 <BaseLayout title="Sankalp Gulati — AI Researcher & Data Scientist">

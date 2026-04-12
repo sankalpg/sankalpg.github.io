@@ -1,20 +1,47 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ResearchEntryRow from '../components/ResearchEntryRow.astro';
-import musicProjects from '../content/music-projects.json';
-import musicData from '../content/research-music.json';
+import musicData from '../content/music-projects.json';
+import papers from '../content/research-music.json';
 
 type UrlStatus = 'ok' | 'possibly_blocked' | 'dead';
 
 const scholarUrl = 'https://scholar.google.com/citations?user=rJSKxAMAAAAJ&hl=en';
 
 // Group papers by year descending
-const byYear: Record<number, typeof musicData.papers> = {};
-for (const p of musicData.papers) {
+const byYear: Record<number, typeof papers.papers> = {};
+for (const p of papers.papers) {
   if (!byYear[p.year]) byYear[p.year] = [];
   byYear[p.year].push(p);
 }
 const years = Object.keys(byYear).map(Number).sort((a, b) => b - a);
+
+const reviewerRoles = [
+  { venue: 'ISMIR', years: '2013–2018', note: '5 years' },
+  { venue: 'IEEE/ACM Transactions on Audio, Speech, and Language Processing', years: '2016, 2017', note: '' },
+  { venue: 'IEEE Transactions on Multimedia', years: '2017', note: '' },
+  { venue: 'Journal of New Music Research (JNMR)', years: '2016', note: '' },
+  { venue: 'EURASIP Journal on Audio, Speech, and Music Processing', years: '2018', note: '' },
+  { venue: 'IEEE Journal of Selected Topics in Signal Processing', years: '2018', note: '' },
+  { venue: 'Journal of Intelligent Information Systems (JIIS)', years: '2016', note: '' },
+  { venue: 'Speech Music and Mind (SMM)', years: '2018', note: '' },
+  { venue: 'National Conference on Communications (NCC)', years: '2015', note: '' },
+];
+
+const teachingRoles = [
+  {
+    course: 'Audio Signal Processing for Music Applications (ASPMA)',
+    where: 'Coursera MOOC · Music Technology Group, UPF',
+    years: '2014–2015',
+    description: 'Designed and implemented programming assignments and automated assessment tools.',
+  },
+  {
+    course: 'Processament de So i Música',
+    where: 'Universitat Pompeu Fabra, Barcelona',
+    years: '2013–2015',
+    description: 'Teaching assistant — conducted seminars, labs, and created programming assignments with automatic graders.',
+  },
+];
 ---
 
 <BaseLayout title="Music AI — Sankalp Gulati">
@@ -28,11 +55,45 @@ const years = Object.keys(byYear).map(Number).sort((a, b) => b - a);
 
   <div class="container section">
 
-    <!-- Projects & Music Hacks -->
+    <!-- Research Projects -->
     <section class="domain-section">
-      <h2 class="section-heading">Projects &amp; Music Hacks</h2>
+      <h2 class="section-heading">Research Projects</h2>
       <div class="projects-grid">
-        {musicProjects.map(proj => (
+        {musicData.projects.map(proj => (
+          <div class="project-card">
+            <div class="project-card__header">
+              <div>
+                <h3 class="project-card__title">{proj.title}</h3>
+                <p class="project-card__subtitle">{proj.subtitle}</p>
+              </div>
+            </div>
+            <p class="project-card__desc">{proj.description}</p>
+            <div class="project-card__footer">
+              {proj.tags.length > 0 && (
+                <div class="project-tags">
+                  {proj.tags.map(tag => <span class="tag">{tag}</span>)}
+                </div>
+              )}
+              {proj.links.length > 0 && (
+                <div class="project-links">
+                  {proj.links.map(link => (
+                    <a href={link.url} target="_blank" rel="noopener" class="project-link">
+                      {link.label} →
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Music Hacks -->
+    <section class="domain-section">
+      <h2 class="section-heading">Music Hacks</h2>
+      <div class="projects-grid">
+        {musicData.hacks.map(proj => (
           <div class="project-card">
             <div class="project-card__header">
               <div>
@@ -81,7 +142,7 @@ const years = Object.keys(byYear).map(Number).sort((a, b) => b - a);
       </div>
     </section>
 
-    <!-- Papers -->
+    <!-- Papers & Publications -->
     <section class="domain-section" id="papers">
       <div class="section-header-row">
         <h2 class="section-heading">Papers &amp; Publications</h2>
@@ -89,7 +150,7 @@ const years = Object.keys(byYear).map(Number).sort((a, b) => b - a);
       </div>
 
       <h3 class="subsection-label">Theses</h3>
-      {musicData.theses.map(t => (
+      {papers.theses.map(t => (
         <ResearchEntryRow
           title={t.title}
           year={t.year}
@@ -115,6 +176,34 @@ const years = Object.keys(byYear).map(Number).sort((a, b) => b - a);
           ))}
         </div>
       ))}
+    </section>
+
+    <!-- Academic Service -->
+    <section class="domain-section" id="service">
+      <h2 class="section-heading">Academic Service</h2>
+
+      <h3 class="subsection-label">Reviewer</h3>
+      <div class="service-list">
+        {reviewerRoles.map(r => (
+          <div class="service-row">
+            <span class="service-venue">{r.venue}</span>
+            <span class="service-year">{r.years}{r.note ? ` · ${r.note}` : ''}</span>
+          </div>
+        ))}
+      </div>
+
+      <h3 class="subsection-label" style="margin-top: 28px;">Teaching</h3>
+      <div class="teaching-list">
+        {teachingRoles.map(t => (
+          <div class="teaching-row">
+            <div class="teaching-main">
+              <span class="teaching-course">{t.course}</span>
+              <span class="teaching-where">{t.where} · {t.years}</span>
+              <span class="teaching-desc">{t.description}</span>
+            </div>
+          </div>
+        ))}
+      </div>
     </section>
 
   </div>
@@ -166,7 +255,7 @@ const years = Object.keys(byYear).map(Number).sort((a, b) => b - a);
   .section-header-row .section-heading { margin-bottom: 0; }
   .section-link { font-size: 12px; color: #7c3aed; }
 
-  /* Projects grid */
+  /* Project/hack cards */
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -217,26 +306,10 @@ const years = Object.keys(byYear).map(Number).sort((a, b) => b - a);
     margin: 0;
     flex: 1;
   }
-  .project-card__footer {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  .project-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-  }
-  .project-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  .project-link {
-    font-size: 12px;
-    color: #7c3aed;
-    font-weight: 600;
-  }
+  .project-card__footer { display: flex; flex-direction: column; gap: 8px; }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+  .project-links { display: flex; flex-wrap: wrap; gap: 10px; }
+  .project-link { font-size: 12px; color: #7c3aed; font-weight: 600; }
 
   /* Thesis box */
   .thesis-box {
@@ -245,27 +318,10 @@ const years = Object.keys(byYear).map(Number).sort((a, b) => b - a);
     border-radius: 4px;
     padding: 20px;
   }
-  .thesis-title {
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--navy);
-    margin: 0 0 6px;
-  }
-  .thesis-meta {
-    font-size: 12px;
-    color: #6b7280;
-    margin: 0 0 14px;
-  }
-  .thesis-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  .thesis-link {
-    font-size: 12px;
-    color: #7c3aed;
-    font-weight: 600;
-  }
+  .thesis-title { font-size: 15px; font-weight: 700; color: var(--navy); margin: 0 0 6px; }
+  .thesis-meta { font-size: 12px; color: #6b7280; margin: 0 0 14px; }
+  .thesis-links { display: flex; flex-wrap: wrap; gap: 10px; }
+  .thesis-link { font-size: 12px; color: #7c3aed; font-weight: 600; }
 
   /* Papers */
   .subsection-label {
@@ -285,4 +341,30 @@ const years = Object.keys(byYear).map(Number).sort((a, b) => b - a);
     color: var(--gray-500);
     margin: 20px 0 4px;
   }
+
+  /* Academic Service */
+  .service-list { display: flex; flex-direction: column; }
+  .service-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding: 10px 0;
+    border-bottom: 1px solid #f3f4f6;
+    flex-wrap: wrap;
+  }
+  .service-venue { font-size: 13px; color: var(--navy); font-weight: 500; }
+  .service-year { font-size: 12px; color: #6b7280; flex-shrink: 0; }
+
+  .teaching-list { display: flex; flex-direction: column; gap: 12px; }
+  .teaching-row {
+    padding: 14px;
+    background: #f9fafb;
+    border-radius: 4px;
+    border: 1px solid #f3f4f6;
+  }
+  .teaching-main { display: flex; flex-direction: column; gap: 3px; }
+  .teaching-course { font-size: 14px; font-weight: 700; color: var(--navy); }
+  .teaching-where { font-size: 11px; color: #7c3aed; font-weight: 600; }
+  .teaching-desc { font-size: 12px; color: #6b7280; line-height: 1.5; margin-top: 4px; }
 </style>
