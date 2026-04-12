@@ -1,42 +1,74 @@
 [
   {
     "id": "ekacare",
-    "company": "EkaCare",
+    "company": "Orbi Health (EkaCare)",
     "role": "Chief Data Scientist",
-    "period": "2021 – present",
-    "description": "Building purpose-driven sovereign LLMs for healthcare in India. Leading AI research across medical ASR, vision models, clinical NLP, and evaluation frameworks.",
+    "period": "Jan 2021 – present",
+    "description": "Leading the AI frontier at Eka Care to build a more intelligent, data-driven healthcare ecosystem for India. Overseeing development of domain-specific Small Language Models (SLMs) and agentic frameworks designed to solve complex clinical challenges at scale.",
     "url": "https://eka.care"
+  },
+  {
+    "id": "synaptic",
+    "company": "VY Labs Technologies (Synaptic)",
+    "role": "Head of Data Science",
+    "period": "Jan 2018 – Jan 2021",
+    "description": "Strategizing and building AI/ML-based products for private equity investors. Worked on knowledge graphs, graph ML, time-series analysis, anomaly detection, and diverse NLP tasks.",
+    "url": "https://synaptic.com"
   },
   {
     "id": "musicmuni",
     "company": "MusicMuni Labs",
-    "role": "Co-founder",
-    "period": "2016 – 2020",
-    "description": "Co-founded a music technology startup focused on AI-driven music learning and discovery tools for Indian classical music.",
+    "role": "Co-Founder",
+    "period": "2016 – 2017",
+    "description": "Developed the technology behind Riyaz, an AI guru for singing assessment (1M+ installs, 10K DAU). Led product development, content creation, and social media marketing.",
+    "url": ""
+  },
+  {
+    "id": "mtg-upf",
+    "company": "Music Technology Group, Universitat Pompeu Fabra",
+    "role": "Doctoral Researcher",
+    "period": "2011 – 2016",
+    "description": "Member of ERC-funded CompMusic project led by Prof. Xavier Serra. Worked on computational models for melodic description of Indian art music. Core member of ERC project CAMUT for commercial exploitation of CompMusic technologies.",
+    "url": "https://www.upf.edu/web/mtg"
+  },
+  {
+    "id": "aynur",
+    "company": "Aynur Labs (Stringwars.co)",
+    "role": "R&D Consultant",
+    "period": "2012 – 2013",
+    "description": "Developed state-of-the-art algorithms for real-time chord recognition and pitch tracking on mobile devices, integrated into guitar learning mobile applications.",
     "url": ""
   },
   {
     "id": "sensibol",
     "company": "Sensibol Audio Technologies",
-    "role": "Research Scientist",
-    "period": "2016 – 2021",
-    "description": "Audio AI research and product development. Worked on pitch analysis, singing assessment, and audio processing pipelines.",
+    "role": "R&D Engineer",
+    "period": "2011",
+    "description": "Developed a robust song version identification system capable of detecting remixes and cover versions. Built a system to automatically identify song structure sections and a music hook identification system.",
     "url": "https://sensibol.com"
   },
   {
     "id": "daplab",
-    "company": "DAPLab, IIT Bombay",
-    "role": "Research Intern",
+    "company": "Digital Audio Processing Lab, IIT Bombay",
+    "role": "Researcher",
     "period": "2010 – 2011",
-    "description": "Research internship in digital audio processing and music information retrieval.",
+    "description": "Worked with Prof. Preeti Rao on Music Information Retrieval topics, focused on pattern matching-based approaches for tempo estimation from audio recordings.",
+    "url": ""
+  },
+  {
+    "id": "anveshan",
+    "company": "Anveshan Telecom",
+    "role": "Senior Engineer",
+    "period": "Dec 2008 – Jan 2010",
+    "description": "Developed noise reduction, automatic volume control, and echo cancellation systems for VOIP and wire-line networks. Implemented Group3 FAX MODEMs and G766 FAX protocols for digital circuit multiplexing equipment.",
     "url": ""
   },
   {
     "id": "ittiam",
     "company": "ITTIAM Systems",
     "role": "Engineer",
-    "period": "2008 – 2010",
-    "description": "Audio and video codec development.",
+    "period": "Jul 2008 – Dec 2008",
+    "description": "Platform-specific optimization of Windows Media Audio (WMA) decoder on ARM CortexA8 processor.",
     "url": "https://www.ittiam.com"
   }
 ]

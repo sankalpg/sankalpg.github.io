@@ -163,6 +163,14 @@
       "urlStatus": "ok"
     },
     {
+      "id": "emr2021-saraga",
+      "title": "Saraga: Open Datasets for Research on Indian Art Music",
+      "year": 2021,
+      "venue": "Empirical Musicology Review",
+      "url": "https://scholar.google.com/citations?user=rJSKxAMAAAAJ&hl=en",
+      "urlStatus": "possibly_blocked"
+    },
+    {
       "id": "iitm2010-rhythm",
       "title": "Rhythm Pattern Representations for Tempo Detection in Music",
       "year": 2010,

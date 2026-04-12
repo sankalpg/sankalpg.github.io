@@ -2,9 +2,9 @@
   {
     "id": "ragawise",
     "title": "Ragawise",
-    "description": "Interactive raga recognition demo built on CompMusic research. Identifies ragas from audio in real time.",
+    "description": "Light-weight real-time raga recognition system in a web browser using JavaScript and D3.js. Best music hack award at HAMR, ISMIR 2015.",
     "url": "https://dunya.compmusic.upf.edu/ragawise/",
-    "tags": ["music-ai", "demo", "research"]
+    "tags": ["music-ai", "demo", "music-hack"]
   },
   {
     "id": "yin-js",
@@ -14,11 +14,60 @@
     "tags": ["open-source", "javascript", "music"]
   },
   {
-    "id": "musicmuni",
-    "title": "MusicMuni Labs",
-    "description": "Co-founded a music technology startup building AI-powered learning and discovery tools for Indian classical music.",
+    "id": "glassdoor",
+    "title": "Classifying Glassdoor Reviews",
+    "description": "ML-based classification of Glassdoor employee reviews to extract structured signals about company culture and sentiment for private equity analysis.",
+    "url": "https://engineering.synaptic.com/classifying-glassdoor-reviews-239f203677d1",
+    "tags": ["synaptic", "nlp", "data-science"]
+  },
+  {
+    "id": "competitive-relationships",
+    "title": "Unraveling Competitive Relationships Across Private Companies",
+    "description": "Graph-based approach to mapping competitive dynamics across private companies using alternative data sources.",
+    "url": "https://engineering.synaptic.com/unraveling-competitive-relationship-across-private-companies-87da87b1eb7a",
+    "tags": ["synaptic", "graph-ml", "data-science"]
+  },
+  {
+    "id": "nyc-noise",
+    "title": "Tracking Post-Pandemic Normalcy: NYC Noise Complaints",
+    "description": "Using NYC noise complaint data as an alternative signal to track post-pandemic urban recovery and normalcy.",
+    "url": "https://engineering.synaptic.com/tracking-post-pandemic-normalcy-noise-complaints-in-nyc-2229f6df963d",
+    "tags": ["synaptic", "time-series", "data-science"]
+  },
+  {
+    "id": "electricity-demand",
+    "title": "Tracking the US Electricity Demand",
+    "description": "Analysis of US electricity demand patterns using time-series techniques to derive macroeconomic signals.",
+    "url": "https://engineering.synaptic.com/tracking-the-us-electricity-demand-88d6c64c8b67",
+    "tags": ["synaptic", "time-series", "data-science"]
+  },
+  {
+    "id": "hindify",
+    "title": "Hindify",
+    "description": "A tool that transforms any audio song to have characteristics of Indian classical music. Used EchoNest Analysis, Remix, and Freesound APIs. Best hack award by EchoNest (Spotify), Music Hack Day Barcelona 2013.",
     "url": "",
-    "tags": ["startup", "music-ai", "india"]
+    "tags": ["music-hack", "music-ai"]
+  },
+  {
+    "id": "hodorizer",
+    "title": "Hodorizer",
+    "description": "Automatically detects and replaces speech utterances in a song with the word Hodor while mimicking the pitch of the original singing. Used EchoNest API and Essentia. Music Hack Day Barcelona 2014.",
+    "url": "",
+    "tags": ["music-hack", "music-ai"]
+  },
+  {
+    "id": "music-spaghetti",
+    "title": "Music Spaghetti",
+    "description": "A tool that plays any song infinitely by seamlessly seeking from one music section to another while maintaining temporal continuity. Presented to the engineering team at SoundCloud.",
+    "url": "",
+    "tags": ["music-hack", "music-ai"]
+  },
+  {
+    "id": "videofy",
+    "title": "Videofy",
+    "description": "Automatic video generation for audio songs using Google Street View, EchoNest, and LastFM APIs. Music Hack Day Barcelona 2012.",
+    "url": "",
+    "tags": ["music-hack", "music-ai"]
   },
   {
     "id": "dunya",
@@ -26,12 +75,5 @@
     "description": "Web platform for exploring CompMusic's Indian art music corpora — melodic analysis, raga recognition, and music browsing.",
     "url": "https://dunya.compmusic.upf.edu/",
     "tags": ["research", "music-ai", "platform"]
-  },
-  {
-    "id": "jingju-tutorial",
-    "title": "Jingju Melodic Description Tutorial",
-    "description": "Code and tutorial for melodic description of Jingju (Peking Opera) music, presented at ISMIR.",
-    "url": "http://compmusic.upf.edu/jingju-tutorial",
-    "tags": ["research", "music-ai", "tutorial"]
   }
 ]
