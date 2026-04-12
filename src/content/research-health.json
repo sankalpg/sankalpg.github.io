@@ -6,7 +6,8 @@
     "description": "Releasing the gold standard for medical speech recognition in Indian healthcare.",
     "url": "https://info.eka.care/services/releasing-parrotlet-a-v2-the-gold-standard-for-medical-speech-recognition-in-indian-healthcare",
     "urlStatus": "ok",
-    "attribution": "EkaCare"
+    "attribution": "EkaCare",
+    "tags": ["ASR", "LLM", "Evaluation"]
   },
   {
     "id": "karma",
@@ -15,7 +16,8 @@
     "description": "An open-source framework for evaluating medical AI systems.",
     "url": "https://info.eka.care/services/introducing-karma-openmedevalkit-an-open-source-framework-for-medical-ai-evaluation",
     "urlStatus": "ok",
-    "attribution": "EkaCare"
+    "attribution": "EkaCare",
+    "tags": ["Evaluation", "LLM"]
   },
   {
     "id": "parrotlet-e",
@@ -24,7 +26,8 @@
     "description": "Bridging India's multilingual healthcare gap with multilingual embeddings and benchmarks.",
     "url": "https://info.eka.care/services/introducing-parrotlet-e-and-eka-indicmteb-bridging-indias-multilingual-healthcare-gap",
     "urlStatus": "ok",
-    "attribution": "EkaCare"
+    "attribution": "EkaCare",
+    "tags": ["NLP", "Multilingual", "Evaluation"]
   },
   {
     "id": "semantic-wer",
@@ -33,7 +36,8 @@
     "description": "New evaluation metrics for speech recognition in healthcare contexts.",
     "url": "https://info.eka.care/services/beyond-traditional-wer-the-critical-need-for-semantic-wer-in-asr-for-indian-healthcare",
     "urlStatus": "ok",
-    "attribution": "EkaCare"
+    "attribution": "EkaCare",
+    "tags": ["ASR", "Evaluation"]
   },
   {
     "id": "parrotlet-v",
@@ -42,7 +46,8 @@
     "description": "Purpose-built vision LLM for parsing and extracting data from medical documents.",
     "url": "https://info.eka.care/services/parrotlet-v-lite-4b-releasing-our-purpose-built-vision-llm-for-parsing-medical-records",
     "urlStatus": "ok",
-    "attribution": "EkaCare"
+    "attribution": "EkaCare",
+    "tags": ["Vision", "LLM"]
   },
   {
     "id": "parrotlet-a-en",
@@ -51,7 +56,8 @@
     "description": "Purpose-built LLM for English ASR in Indian healthcare settings.",
     "url": "https://info.eka.care/services/parrotlet-a-en-5b-releasing-our-purpose-built-llm-for-english-asr-in-indian-healthcare",
     "urlStatus": "ok",
-    "attribution": "EkaCare"
+    "attribution": "EkaCare",
+    "tags": ["ASR", "LLM"]
   },
   {
     "id": "eval-datasets",
@@ -60,7 +66,8 @@
     "description": "EkaCare releases four evaluation datasets for medical AI systems.",
     "url": "https://info.eka.care/services/advancing-healthcare-ai-evaluation-in-india-ekacare-releases-four-evaluation-datasets",
     "urlStatus": "ok",
-    "attribution": "EkaCare"
+    "attribution": "EkaCare",
+    "tags": ["Evaluation", "Datasets"]
   },
   {
     "id": "small-llms",
@@ -69,7 +76,8 @@
     "description": "Comparative analysis of specialized small models versus general-purpose AI for healthcare tasks.",
     "url": "https://info.eka.care/services/lab-ready-and-prescription-perfect-ekas-small-llms-vs-industry-giants",
     "urlStatus": "ok",
-    "attribution": "EkaCare"
+    "attribution": "EkaCare",
+    "tags": ["LLM", "Evaluation", "Clinical"]
   },
   {
     "id": "lab-reports",
@@ -78,7 +86,8 @@
     "description": "Challenges and learnings from extracting structured data from medical lab reports.",
     "url": "https://info.eka.care/services/eka-smart-report",
     "urlStatus": "ok",
-    "attribution": "EkaCare"
+    "attribution": "EkaCare",
+    "tags": ["Vision", "NLP", "Clinical"]
   },
   {
     "id": "ontologies",
@@ -87,7 +96,8 @@
     "description": "Ontology applications in medical contexts for knowledge representation.",
     "url": "https://info.eka.care/services/leveraging-ontologies-in-health-care",
     "urlStatus": "ok",
-    "attribution": "EkaCare"
+    "attribution": "EkaCare",
+    "tags": ["NLP", "Clinical"]
   },
   {
     "id": "annual-report-2022",
@@ -96,6 +106,7 @@
     "description": "EkaCare's annual data-driven health report for India.",
     "url": "https://c.eka.care/insights_2022.pdf",
     "urlStatus": "ok",
-    "attribution": "EkaCare"
+    "attribution": "EkaCare",
+    "tags": ["Datasets", "Clinical"]
   }
 ]

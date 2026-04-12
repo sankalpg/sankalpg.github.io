@@ -3,21 +3,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import HomeSectionPreview from '../components/HomeSectionPreview.astro';
 import WorkCard from '../components/WorkCard.astro';
-import ResearchEntryRow from '../components/ResearchEntryRow.astro';
-import ProjectCard from '../components/ProjectCard.astro';
 
 import work from '../content/work.json';
-import healthData from '../content/research-health.json';
-import musicData from '../content/research-music.json';
-import projects from '../content/projects.json';
-
-type UrlStatus = 'ok' | 'possibly_blocked' | 'dead';
-type EntryType = 'spotlight' | 'paper' | 'thesis';
+import healthApps from '../content/healthcare-apps.json';
+import musicProjects from '../content/music-projects.json';
+import altData from '../content/alternate-data.json';
 
 const topWork = work.slice(0, 2);
-const topHealth = healthData.slice(0, 3);
-const topMusic = musicData.papers.slice(0, 2);
-const topProjects = projects.slice(0, 3);
+const topApps = healthApps.slice(0, 3);
+const topMusicProjects = musicProjects.slice(0, 3);
+const topAlt = altData.slice(0, 2);
 ---
 <BaseLayout title="Sankalp Gulati — AI Researcher & Data Scientist">
   <Hero />
@@ -34,63 +29,80 @@ const topProjects = projects.slice(0, 3);
     ))}
   </HomeSectionPreview>
 
-  <HomeSectionPreview title="Research" href="/research" alt>
-    <div class="research-preview">
-      <div class="research-preview__col">
-        <p class="label" style="color: var(--accent-health); margin-bottom: 12px;">Health Tech</p>
-        {topHealth.map(e => (
-          <ResearchEntryRow
-            title={e.title}
-            url={e.url}
-            urlStatus={e.urlStatus as UrlStatus}
-            attribution={e.attribution}
-            type={e.type as EntryType}
-          />
-        ))}
-      </div>
-      <div class="research-preview__col">
-        <p class="label" style="color: var(--accent-music); margin-bottom: 12px;">Music AI</p>
-        {topMusic.map(p => (
-          <ResearchEntryRow
-            title={p.title}
-            year={p.year}
-            venue={p.venue}
-            url={p.url}
-            urlStatus={p.urlStatus as UrlStatus}
-            type="paper"
-          />
+  <HomeSectionPreview title="Healthcare AI" href="/healthcare" alt>
+    <div class="domain-preview">
+      <p class="domain-preview__note">Building sovereign AI for Indian healthcare — ASR, Vision, NLP, Clinical Decision Support.</p>
+      <div class="domain-chips">
+        {topApps.map(app => (
+          <div class="domain-chip health-chip">
+            <span class="chip-title">{app.title}</span>
+            <span class="chip-sub">{app.subtitle}</span>
+          </div>
         ))}
       </div>
     </div>
   </HomeSectionPreview>
 
-  <HomeSectionPreview title="Projects" href="/projects">
-    <div class="projects-preview">
-      {topProjects.map(p => (
-        <ProjectCard
-          title={p.title}
-          description={p.description}
-          url={p.url || undefined}
-          tags={p.tags}
-        />
-      ))}
+  <HomeSectionPreview title="Music AI" href="/music-ai">
+    <div class="domain-preview">
+      <p class="domain-preview__note">MIR research, music hacks, and 22 publications across ISMIR, ICASSP, JNMR.</p>
+      <div class="domain-chips">
+        {topMusicProjects.map(proj => (
+          <div class="domain-chip music-chip">
+            <span class="chip-title">{proj.title}</span>
+            {'award' in proj && proj.award && <span class="chip-award">🏆</span>}
+          </div>
+        ))}
+      </div>
+    </div>
+  </HomeSectionPreview>
+
+  <HomeSectionPreview title="Alternate Data" href="/alternate-data" alt>
+    <div class="domain-preview">
+      <p class="domain-preview__note">NLP, Graph ML, and time series on non-traditional data signals.</p>
+      <div class="alt-articles">
+        {topAlt.map(a => (
+          <div class="alt-article-row">
+            <a href={a.url} target="_blank" rel="noopener" class="alt-article-title">{a.title}</a>
+            <div class="alt-article-tags">
+              {a.tags.map(tag => <span class="tag">{tag}</span>)}
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   </HomeSectionPreview>
 </BaseLayout>
 
 <style>
-  .research-preview {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
+  .domain-preview { display: flex; flex-direction: column; gap: 14px; }
+  .domain-preview__note {
+    font-size: 13px;
+    color: var(--gray-700);
+    line-height: 1.6;
+    margin: 0;
+    font-style: italic;
   }
-  .projects-preview {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+  .domain-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
   }
-  @media (max-width: 640px) {
-    .research-preview { grid-template-columns: 1fr; }
-    .projects-preview { grid-template-columns: 1fr; }
+  .domain-chip {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 12px;
+    border-radius: 4px;
+    gap: 2px;
   }
+  .health-chip { background: #eff6ff; border: 1px solid #bfdbfe; }
+  .music-chip { background: #f5f3ff; border: 1px solid #ddd6fe; }
+  .chip-title { font-size: 12px; font-weight: 700; color: var(--navy); }
+  .chip-sub { font-size: 10px; color: #6b7280; }
+  .chip-award { font-size: 11px; }
+  .alt-articles { display: flex; flex-direction: column; gap: 10px; }
+  .alt-article-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+  .alt-article-title { font-size: 13px; font-weight: 600; color: var(--navy); flex: 1; }
+  .alt-article-title:hover { color: #0891b2; }
+  .alt-article-tags { display: flex; gap: 4px; flex-shrink: 0; }
 </style>

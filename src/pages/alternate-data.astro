@@ -1,0 +1,182 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import articles from '../content/alternate-data.json';
+
+const allTags = Array.from(new Set(articles.flatMap(a => a.tags))).sort();
+---
+
+<BaseLayout title="Alternate Data — Sankalp Gulati">
+  <div class="domain-hero altdata-hero">
+    <div class="container">
+      <p class="domain-eyebrow">Domain</p>
+      <h1 class="domain-title">Alternate Data</h1>
+      <p class="domain-desc">Data science and machine learning applied to non-traditional signals — employee reviews, company relationships, urban data, and energy consumption as economic indicators.</p>
+    </div>
+  </div>
+
+  <div class="container section">
+    <section class="domain-section">
+      <div class="section-header-row">
+        <h2 class="section-heading">Articles &amp; Engineering Blog</h2>
+        <span class="attribution-note">Work at Synaptic / VY Labs</span>
+      </div>
+
+      <div class="tag-filters" id="altTagFilters">
+        <button class="tag-btn tag-btn--active" data-tag="all">All</button>
+        {allTags.map(tag => (
+          <button class="tag-btn" data-tag={tag}>{tag}</button>
+        ))}
+      </div>
+
+      <div class="articles-list" id="altEntries">
+        {articles.map(article => (
+          <div class="article-row filterable-entry" data-tags={article.tags.join(',')}>
+            <div class="article-row__main">
+              {article.url ? (
+                <a href={article.url} target="_blank" rel="noopener" class="article-title">
+                  {article.title}
+                </a>
+              ) : (
+                <span class="article-title article-title--no-link">{article.title}</span>
+              )}
+              <p class="article-desc">{article.description}</p>
+            </div>
+            <div class="article-tags">
+              {article.tags.map(tag => <span class="tag">{tag}</span>)}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  </div>
+</BaseLayout>
+
+<script>
+  const filters = document.getElementById('altTagFilters');
+  const entries = document.querySelectorAll('#altEntries .filterable-entry');
+
+  filters?.addEventListener('click', (e) => {
+    const btn = (e.target as HTMLElement).closest('.tag-btn');
+    if (!btn) return;
+    const tag = btn.getAttribute('data-tag') ?? 'all';
+
+    filters.querySelectorAll('.tag-btn').forEach(b => b.classList.remove('tag-btn--active'));
+    btn.classList.add('tag-btn--active');
+
+    entries.forEach(entry => {
+      const tags = (entry.getAttribute('data-tags') ?? '').split(',');
+      const show = tag === 'all' || tags.includes(tag);
+      (entry as HTMLElement).style.display = show ? '' : 'none';
+    });
+  });
+</script>
+
+<style>
+  .domain-hero {
+    padding: 56px 0 44px;
+    color: #fff;
+  }
+  .altdata-hero { background: #164e63; }
+  .domain-eyebrow {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 10px;
+  }
+  .domain-title {
+    font-size: clamp(28px, 5vw, 40px);
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 14px;
+    line-height: 1.1;
+  }
+  .domain-desc {
+    font-size: 14px;
+    line-height: 1.7;
+    opacity: 0.75;
+    max-width: 560px;
+  }
+  .domain-section { margin-bottom: 60px; }
+  .section-heading {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #0891b2;
+    margin-bottom: 0;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #cffafe;
+  }
+  .section-header-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+  .attribution-note {
+    font-size: 11px;
+    color: #6b7280;
+    font-style: italic;
+  }
+  .tag-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 20px;
+  }
+  .tag-btn {
+    font-size: 11px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid #a5f3fc;
+    background: #fff;
+    color: #0891b2;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+    font-family: inherit;
+  }
+  .tag-btn:hover { background: #ecfeff; }
+  .tag-btn--active {
+    background: #0891b2;
+    color: #fff;
+    border-color: #0891b2;
+  }
+
+  .articles-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .article-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .article-row__main { flex: 1; }
+  .article-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--navy);
+    display: block;
+    margin-bottom: 4px;
+  }
+  a.article-title:hover { color: #0891b2; }
+  .article-title--no-link { color: var(--navy); }
+  .article-desc {
+    font-size: 12px;
+    color: #6b7280;
+    line-height: 1.5;
+    margin: 0;
+  }
+  .article-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    flex-shrink: 0;
+    padding-top: 2px;
+  }
+</style>

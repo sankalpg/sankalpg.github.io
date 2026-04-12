@@ -1,0 +1,84 @@
+[
+  {
+    "id": "ragawise",
+    "title": "Ragawise",
+    "subtitle": "Raga recognition & visualization",
+    "description": "Real-time raga recognition from audio using pitch class profiles and machine learning. Identifies the raga being performed and visualizes melodic patterns live. Built at HAMR 2015 (Hacking Audio and Music Research).",
+    "award": "Best Code — HAMR 2015",
+    "tags": ["MIR", "Python", "Raga"],
+    "links": [
+      { "label": "GitHub", "url": "https://github.com/sankalpg/Ragawise" }
+    ]
+  },
+  {
+    "id": "hindify",
+    "title": "Hindify",
+    "subtitle": "Hindi music style transfer",
+    "description": "Transforms Western pop songs into Hindustani classical style by applying raga-based melodic transformations. Converts Western scales to raga scales and applies ornaments characteristic of Indian classical music.",
+    "award": "Best Hack — EchoNest 2013",
+    "tags": ["MIR", "Python", "Raga", "Signal Processing"],
+    "links": [
+      { "label": "GitHub", "url": "https://github.com/sankalpg/hindustanify" }
+    ]
+  },
+  {
+    "id": "sawaal-jawaab",
+    "title": "Sawaal-Jawaab",
+    "subtitle": "Interactive Hindustani music game",
+    "description": "A call-and-response musical game inspired by the Sawaal-Jawaab tradition in Indian classical music. Players sing or play a melodic phrase and the system responds with a melodic answer. Built at HAMR 2015.",
+    "tags": ["MIR", "Interactive", "Raga"],
+    "links": []
+  },
+  {
+    "id": "hodorizer",
+    "title": "Hodorizer",
+    "subtitle": "Game of Thrones audio hack",
+    "description": "Replaces all speech in any audio/video with Hodor's iconic single-word vocabulary, while preserving the original prosody, rhythm, and emotional tone of the speech using voice conversion techniques.",
+    "tags": ["Signal Processing", "Voice", "Fun"],
+    "links": [
+      { "label": "GitHub", "url": "https://github.com/sankalpg/Hodorizor" }
+    ]
+  },
+  {
+    "id": "music-spaghetti",
+    "title": "Music Spaghetti",
+    "subtitle": "Infinite music loop generator",
+    "description": "An Essentia-powered implementation of the Infinite Jukebox concept — analyzes a song's beat structure to find similar segments and creates an endlessly recombining loop that always sounds musical.",
+    "tags": ["MIR", "Python", "Audio"],
+    "links": [
+      { "label": "GitHub", "url": "https://github.com/sankalpg/Infinite_Jukebox_Essentia" }
+    ]
+  },
+  {
+    "id": "yin-js",
+    "title": "YIN.js",
+    "subtitle": "Pitch detection in JavaScript",
+    "description": "JavaScript implementation of the YIN pitch detection algorithm for real-time fundamental frequency estimation in the browser. Enables pitch tracking without any server-side processing.",
+    "tags": ["Signal Processing", "JavaScript", "Audio"],
+    "links": []
+  },
+  {
+    "id": "take-1",
+    "title": "Take-1",
+    "subtitle": "Music practice tool",
+    "description": "A practice companion for musicians that records and analyzes musical phrases, helping students compare their performances against reference recordings and track improvement over time.",
+    "tags": ["MIR", "Mobile", "Audio"],
+    "links": []
+  },
+  {
+    "id": "dunya",
+    "title": "Dunya",
+    "subtitle": "CompMusic music corpus explorer",
+    "description": "Web platform for exploring and analyzing the CompMusic music corpora — large collections of annotated audio recordings across Hindustani, Carnatic, Makam, Beijing opera, and Andalusian musical traditions.",
+    "tags": ["MIR", "Web", "Datasets"],
+    "links": []
+  },
+  {
+    "id": "riyaz",
+    "title": "Riyaz",
+    "subtitle": "AI music practice app",
+    "description": "AI-powered practice app for Indian classical music. Provides real-time feedback on pitch accuracy, tala (rhythm) adherence, and raga grammar. Co-founded MusicMuni Labs to build and commercialize this. 1M+ installs.",
+    "tags": ["MIR", "Mobile", "Raga", "ASR"],
+    "links": []
+  }
+]

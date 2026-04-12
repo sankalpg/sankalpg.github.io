@@ -1,0 +1,42 @@
+[
+  {
+    "id": "ekascribe",
+    "title": "EkaScribe",
+    "subtitle": "AI Medical Scribe",
+    "description": "Ambient AI scribe that records doctor-patient conversations and automatically generates structured clinical notes, SOAP notes, and prescriptions in 20+ languages including English and regional Indian languages.",
+    "url": "https://ekascribe.ai/",
+    "tags": ["ASR", "LLM", "Clinical"]
+  },
+  {
+    "id": "document-understanding",
+    "title": "Document Understanding",
+    "subtitle": "Medical Document AI",
+    "description": "Automates parsing of unstructured medical documents — prescriptions, lab reports, insurance claims — with handwritten OCR, PII redaction, and SNOMED-CT / LOINC coding support.",
+    "url": "https://developer.eka.care/eka-medai/technologies/overview",
+    "tags": ["Vision", "NLP", "Healthcare"]
+  },
+  {
+    "id": "heart-rate-monitor",
+    "title": "Heart Rate Monitor",
+    "subtitle": "Camera-based vitals",
+    "description": "Measures heart rate using the smartphone's back camera via photoplethysmography — no additional equipment needed. Useful for fitness tracking and detecting when medical consultation may be necessary.",
+    "url": "https://www.eka.care/services/heart-rate-monitor-app-2",
+    "tags": ["Signal Processing", "Mobile"]
+  },
+  {
+    "id": "docassist",
+    "title": "DocAssist",
+    "subtitle": "Clinical AI for Doctors",
+    "description": "Clinical AI assistant combining voice-powered documentation, intelligent patient profile management, and real-time clinical insights. Features drug interaction alerts, multi-language support, and automated SOAP note generation.",
+    "url": "https://www.eka.care/s/for-doctors/docassist",
+    "tags": ["LLM", "Clinical", "ASR"]
+  },
+  {
+    "id": "cdss",
+    "title": "CDSS",
+    "subtitle": "Clinical Decision Support System",
+    "description": "AI-powered clinical decision support that assists physicians with evidence-based recommendations, differential diagnosis, and treatment guidance at the point of care.",
+    "url": "",
+    "tags": ["LLM", "Clinical"]
+  }
+]

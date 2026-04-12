@@ -1,0 +1,288 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ResearchEntryRow from '../components/ResearchEntryRow.astro';
+import musicProjects from '../content/music-projects.json';
+import musicData from '../content/research-music.json';
+
+type UrlStatus = 'ok' | 'possibly_blocked' | 'dead';
+
+const scholarUrl = 'https://scholar.google.com/citations?user=rJSKxAMAAAAJ&hl=en';
+
+// Group papers by year descending
+const byYear: Record<number, typeof musicData.papers> = {};
+for (const p of musicData.papers) {
+  if (!byYear[p.year]) byYear[p.year] = [];
+  byYear[p.year].push(p);
+}
+const years = Object.keys(byYear).map(Number).sort((a, b) => b - a);
+---
+
+<BaseLayout title="Music AI — Sankalp Gulati">
+  <div class="domain-hero music-hero">
+    <div class="container">
+      <p class="domain-eyebrow">Domain</p>
+      <h1 class="domain-title">Music AI</h1>
+      <p class="domain-desc">PhD research in Music Information Retrieval at Universitat Pompeu Fabra. 22 publications at ISMIR, ICASSP, JNMR. Co-founded MusicMuni Labs (Riyaz, 1M+ installs).</p>
+    </div>
+  </div>
+
+  <div class="container section">
+
+    <!-- Projects & Music Hacks -->
+    <section class="domain-section">
+      <h2 class="section-heading">Projects &amp; Music Hacks</h2>
+      <div class="projects-grid">
+        {musicProjects.map(proj => (
+          <div class="project-card">
+            <div class="project-card__header">
+              <div>
+                <h3 class="project-card__title">{proj.title}</h3>
+                <p class="project-card__subtitle">{proj.subtitle}</p>
+              </div>
+              {'award' in proj && proj.award && (
+                <span class="award-badge">🏆 {proj.award}</span>
+              )}
+            </div>
+            <p class="project-card__desc">{proj.description}</p>
+            <div class="project-card__footer">
+              {proj.tags.length > 0 && (
+                <div class="project-tags">
+                  {proj.tags.map(tag => <span class="tag">{tag}</span>)}
+                </div>
+              )}
+              {proj.links.length > 0 && (
+                <div class="project-links">
+                  {proj.links.map(link => (
+                    <a href={link.url} target="_blank" rel="noopener" class="project-link">
+                      {link.label} →
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- PhD Thesis Resources -->
+    <section class="domain-section">
+      <h2 class="section-heading">PhD Thesis Resources</h2>
+      <div class="thesis-box">
+        <h3 class="thesis-title">Computational Approaches for Melodic Description in Indian Art Music Corpora</h3>
+        <p class="thesis-meta">PhD Dissertation · Music Technology Group, Universitat Pompeu Fabra · 2016</p>
+        <div class="thesis-links">
+          <a href="https://www.tdx.cat/handle/10803/398984" target="_blank" rel="noopener" class="thesis-link">Full Text →</a>
+          <a href="https://github.com/sankalpg/PhDThesis" target="_blank" rel="noopener" class="thesis-link">GitHub →</a>
+          <a href="https://github.com/sankalpg/MelodicAnalysisDatasets" target="_blank" rel="noopener" class="thesis-link">Datasets →</a>
+          <a href="https://www.youtube.com/watch?v=xdJz-AVhPZk" target="_blank" rel="noopener" class="thesis-link">Defense Video →</a>
+          <a href="https://compmusic.upf.edu/phd-thesis-sankalp" target="_blank" rel="noopener" class="thesis-link">CompMusic →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Papers -->
+    <section class="domain-section" id="papers">
+      <div class="section-header-row">
+        <h2 class="section-heading">Papers &amp; Publications</h2>
+        <a href={scholarUrl} target="_blank" rel="noopener" class="section-link">Google Scholar →</a>
+      </div>
+
+      <h3 class="subsection-label">Theses</h3>
+      {musicData.theses.map(t => (
+        <ResearchEntryRow
+          title={t.title}
+          year={t.year}
+          venue={t.venue}
+          url={t.url}
+          urlStatus={t.urlStatus as UrlStatus}
+          type="thesis"
+        />
+      ))}
+
+      {years.map(year => (
+        <div class="year-group">
+          <h3 class="year-label">{year}</h3>
+          {byYear[year].map(p => (
+            <ResearchEntryRow
+              title={p.title}
+              year={p.year}
+              venue={p.venue}
+              url={p.url}
+              urlStatus={p.urlStatus as UrlStatus}
+              type="paper"
+            />
+          ))}
+        </div>
+      ))}
+    </section>
+
+  </div>
+</BaseLayout>
+
+<style>
+  .domain-hero {
+    padding: 56px 0 44px;
+    color: #fff;
+  }
+  .music-hero { background: #4c1d95; }
+  .domain-eyebrow {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 10px;
+  }
+  .domain-title {
+    font-size: clamp(28px, 5vw, 40px);
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 14px;
+    line-height: 1.1;
+  }
+  .domain-desc {
+    font-size: 14px;
+    line-height: 1.7;
+    opacity: 0.75;
+    max-width: 560px;
+  }
+  .domain-section { margin-bottom: 60px; }
+  .section-heading {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #7c3aed;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #ede9fe;
+  }
+  .section-header-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+  .section-header-row .section-heading { margin-bottom: 0; }
+  .section-link { font-size: 12px; color: #7c3aed; }
+
+  /* Projects grid */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+  }
+  .project-card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .project-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .project-card__title {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0;
+    color: var(--navy);
+  }
+  .project-card__subtitle {
+    font-size: 11px;
+    color: #7c3aed;
+    margin: 3px 0 0;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  .award-badge {
+    font-size: 10px;
+    background: #fef9c3;
+    color: #78350f;
+    padding: 3px 8px;
+    border-radius: 10px;
+    white-space: nowrap;
+    border: 1px solid #fde68a;
+    flex-shrink: 0;
+  }
+  .project-card__desc {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #4b5563;
+    margin: 0;
+    flex: 1;
+  }
+  .project-card__footer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .project-link {
+    font-size: 12px;
+    color: #7c3aed;
+    font-weight: 600;
+  }
+
+  /* Thesis box */
+  .thesis-box {
+    background: #f5f3ff;
+    border: 1px solid #ddd6fe;
+    border-radius: 4px;
+    padding: 20px;
+  }
+  .thesis-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 0 0 6px;
+  }
+  .thesis-meta {
+    font-size: 12px;
+    color: #6b7280;
+    margin: 0 0 14px;
+  }
+  .thesis-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .thesis-link {
+    font-size: 12px;
+    color: #7c3aed;
+    font-weight: 600;
+  }
+
+  /* Papers */
+  .subsection-label {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray-500);
+    margin: 20px 0 8px;
+  }
+  .year-group { margin-top: 8px; }
+  .year-label {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray-500);
+    margin: 20px 0 4px;
+  }
+</style>

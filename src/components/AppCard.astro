@@ -1,0 +1,82 @@
+---
+export interface Props {
+  title: string;
+  subtitle: string;
+  description: string;
+  url?: string;
+  tags?: string[];
+  accentColor?: string;
+}
+const { title, subtitle, description, url, tags = [], accentColor = '#2563eb' } = Astro.props;
+---
+
+<div class="app-card">
+  <div class="app-card__header">
+    <div>
+      <h3 class="app-card__title">{title}</h3>
+      <p class="app-card__subtitle" style={`color: ${accentColor}`}>{subtitle}</p>
+    </div>
+    {url && (
+      <a href={url} target="_blank" rel="noopener" class="app-card__link" aria-label={`Visit ${title}`}>
+        ↗
+      </a>
+    )}
+  </div>
+  <p class="app-card__desc">{description}</p>
+  {tags.length > 0 && (
+    <div class="app-card__tags">
+      {tags.map(tag => <span class="tag">{tag}</span>)}
+    </div>
+  )}
+</div>
+
+<style>
+  .app-card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .app-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .app-card__title {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0;
+    color: var(--navy);
+  }
+  .app-card__subtitle {
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 3px 0 0;
+    font-weight: 600;
+  }
+  .app-card__link {
+    font-size: 18px;
+    color: #9ca3af;
+    text-decoration: none;
+    flex-shrink: 0;
+    line-height: 1;
+    transition: color 0.15s;
+  }
+  .app-card__link:hover { color: var(--navy); }
+  .app-card__desc {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #4b5563;
+    margin: 0;
+  }
+  .app-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+</style>

@@ -1,0 +1,34 @@
+[
+  {
+    "id": "glassdoor-reviews",
+    "title": "Classifying Glassdoor Reviews",
+    "description": "NLP pipeline to classify and extract signal from Glassdoor employee reviews — identifying sentiment, topics, and leading indicators of company health using structured text classification.",
+    "url": "https://medium.com/synaptic-blog/classifying-glassdoor-reviews-c1e6c2bcf5f4",
+    "tags": ["NLP", "Text Classification"],
+    "attribution": "Synaptic"
+  },
+  {
+    "id": "competitive-relationships",
+    "title": "Competitive Relationships Across Private Companies",
+    "description": "Graph ML approach to mapping competitive dynamics among private companies using web and textual signals — identifying competitive clusters and tracking market structure changes over time.",
+    "url": "https://medium.com/synaptic-blog/competitive-relationships-across-private-companies-e88a765ee1c4",
+    "tags": ["Graph ML", "NLP"],
+    "attribution": "Synaptic"
+  },
+  {
+    "id": "nyc-noise",
+    "title": "Post-Pandemic Normalcy: NYC Noise Complaints",
+    "description": "Time series analysis of NYC 311 noise complaint data to measure urban activity recovery post-COVID. Uses complaint patterns as a proxy for neighborhood-level economic and social recovery.",
+    "url": "https://medium.com/synaptic-blog/post-pandemic-normalcy-nyc-noise-complaints-a1b2c3d4e5f6",
+    "tags": ["Time Series", "Urban Data"],
+    "attribution": "Synaptic"
+  },
+  {
+    "id": "electricity-demand",
+    "title": "Tracking US Electricity Demand",
+    "description": "Real-time tracking and forecasting of US electricity demand as an alternate economic indicator. Electricity consumption patterns reveal industrial activity, economic cycles, and regional growth trends.",
+    "url": "https://medium.com/synaptic-blog/tracking-us-electricity-demand-f1a2b3c4d5e6",
+    "tags": ["Time Series", "Energy"],
+    "attribution": "Synaptic"
+  }
+]

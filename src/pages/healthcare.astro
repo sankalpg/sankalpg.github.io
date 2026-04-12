@@ -1,0 +1,172 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AppCard from '../components/AppCard.astro';
+import ResearchEntryRow from '../components/ResearchEntryRow.astro';
+import appsData from '../content/healthcare-apps.json';
+import researchData from '../content/research-health.json';
+
+type UrlStatus = 'ok' | 'possibly_blocked' | 'dead';
+type EntryType = 'spotlight' | 'paper' | 'thesis';
+
+// Collect all unique tags for filter buttons
+const allTags = Array.from(new Set(researchData.flatMap(e => e.tags ?? []))).sort();
+---
+
+<BaseLayout title="Healthcare AI — Sankalp Gulati">
+  <div class="domain-hero health-hero">
+    <div class="container">
+      <p class="domain-eyebrow">Domain</p>
+      <h1 class="domain-title">Healthcare AI</h1>
+      <p class="domain-desc">Building sovereign AI for Indian healthcare at EkaCare — medical ASR, vision models, multilingual NLP, clinical decision support, and evaluation frameworks.</p>
+    </div>
+  </div>
+
+  <div class="container section">
+
+    <!-- Applications -->
+    <section class="domain-section">
+      <h2 class="section-heading">Applications</h2>
+      <div class="apps-grid">
+        {appsData.map(app => (
+          <AppCard
+            title={app.title}
+            subtitle={app.subtitle}
+            description={app.description}
+            url={app.url || undefined}
+            tags={app.tags}
+            accentColor="#2563eb"
+          />
+        ))}
+      </div>
+    </section>
+
+    <!-- Research, Blogs & Articles -->
+    <section class="domain-section" id="research">
+      <div class="section-header-row">
+        <h2 class="section-heading">Research, Blogs &amp; Articles</h2>
+        <a href="https://developer.eka.care/eka-medai/spotlight" target="_blank" rel="noopener" class="section-link">EkaCare Spotlight →</a>
+      </div>
+
+      <div class="tag-filters" id="healthTagFilters">
+        <button class="tag-btn tag-btn--active" data-tag="all">All</button>
+        {allTags.map(tag => (
+          <button class="tag-btn" data-tag={tag}>{tag}</button>
+        ))}
+      </div>
+
+      <div id="healthEntries">
+        {researchData.map(entry => (
+          <div class="filterable-entry" data-tags={(entry.tags ?? []).join(',')}>
+            <ResearchEntryRow
+              title={entry.title}
+              url={entry.url}
+              urlStatus={entry.urlStatus as UrlStatus}
+              description={entry.description}
+              attribution={entry.attribution}
+              type={entry.type as EntryType}
+            />
+          </div>
+        ))}
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>
+
+<script>
+  const filters = document.getElementById('healthTagFilters');
+  const entries = document.querySelectorAll('#healthEntries .filterable-entry');
+
+  filters?.addEventListener('click', (e) => {
+    const btn = (e.target as HTMLElement).closest('.tag-btn');
+    if (!btn) return;
+    const tag = btn.getAttribute('data-tag') ?? 'all';
+
+    filters.querySelectorAll('.tag-btn').forEach(b => b.classList.remove('tag-btn--active'));
+    btn.classList.add('tag-btn--active');
+
+    entries.forEach(entry => {
+      const tags = (entry.getAttribute('data-tags') ?? '').split(',');
+      const show = tag === 'all' || tags.includes(tag);
+      (entry as HTMLElement).style.display = show ? '' : 'none';
+    });
+  });
+</script>
+
+<style>
+  .domain-hero {
+    padding: 56px 0 44px;
+    color: #fff;
+  }
+  .health-hero { background: #1e3a8a; }
+  .domain-eyebrow {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 10px;
+  }
+  .domain-title {
+    font-size: clamp(28px, 5vw, 40px);
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 14px;
+    line-height: 1.1;
+  }
+  .domain-desc {
+    font-size: 14px;
+    line-height: 1.7;
+    opacity: 0.75;
+    max-width: 560px;
+  }
+  .domain-section { margin-bottom: 60px; }
+  .section-heading {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #2563eb;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #dbeafe;
+  }
+  .section-header-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+  .section-header-row .section-heading { margin-bottom: 0; }
+  .section-link {
+    font-size: 12px;
+    color: #2563eb;
+  }
+  .apps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+  }
+  .tag-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 20px;
+  }
+  .tag-btn {
+    font-size: 11px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid #bfdbfe;
+    background: #fff;
+    color: #3b82f6;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+    font-family: inherit;
+  }
+  .tag-btn:hover { background: #eff6ff; }
+  .tag-btn--active {
+    background: #2563eb;
+    color: #fff;
+    border-color: #2563eb;
+  }
+</style>
