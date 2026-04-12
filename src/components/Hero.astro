@@ -2,6 +2,7 @@
 ---
 <section class="hero">
   <div class="container hero__inner">
+    <img src="/photo.jpg" alt="Sankalp Gulati" class="hero__photo" />
     <div class="hero__content">
       <p class="hero__eyebrow">Chief Data Scientist · EkaCare</p>
       <h1 class="hero__headline">Building Sovereign AI<br />for Healthcare in India</h1>
@@ -60,4 +61,23 @@
     transition: background 0.15s;
   }
   .hero__link:hover { background: rgba(255,255,255,0.22); text-decoration: none; }
+  .hero__inner {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+  .hero__photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    order: 2;
+    opacity: 0.92;
+  }
+  .hero__content { order: 1; flex: 1; }
+  @media (max-width: 480px) {
+    .hero__inner { flex-direction: column; align-items: flex-start; }
+    .hero__photo { order: 0; }
+  }
 </style>
