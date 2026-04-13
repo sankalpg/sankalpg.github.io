@@ -7,6 +7,7 @@ interface Props {
   url?: string;
 }
 const { company, role, period, description, url } = Astro.props;
+const paragraphs = description.split(/\n\n+/).map(p => p.trim()).filter(Boolean);
 ---
 <div class="work-card">
   <div class="work-card__meta">
@@ -20,7 +21,9 @@ const { company, role, period, description, url } = Astro.props;
       }
       <span class="work-card__role">{role}</span>
     </div>
-    <p class="work-card__desc">{description}</p>
+    <div class="work-card__desc">
+      {paragraphs.map(p => <p>{p}</p>)}
+    </div>
   </div>
 </div>
 
@@ -49,9 +52,15 @@ const { company, role, period, description, url } = Astro.props;
     margin-left: 8px;
   }
   .work-card__desc {
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .work-card__desc p {
     font-size: 13px;
     color: var(--gray-700);
-    line-height: 1.6;
-    margin-top: 6px;
+    line-height: 1.7;
+    margin: 0;
   }
 </style>

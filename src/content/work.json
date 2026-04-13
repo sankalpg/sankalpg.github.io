@@ -4,7 +4,7 @@
     "company": "Orbi Health (EkaCare)",
     "role": "Chief Data Scientist",
     "period": "Jan 2021 – present",
-    "description": "Leading the AI frontier at Eka Care to build a more intelligent, data-driven healthcare ecosystem for India. Overseeing development of domain-specific Small Language Models (SLMs) and agentic frameworks designed to solve complex clinical challenges at scale.",
+    "description": "Leading AI/ML at EkaCare to build sovereign, purpose-built intelligence for Indian healthcare. The core thesis: general-purpose LLMs are not enough — Indian healthcare needs models trained on its own language, its own clinical context, its own constraints.\n\nBuilt the Parrotlet family — a suite of small, domain-specific models. Parrotlet-A (medical ASR, 5B parameters) achieves state-of-the-art on Indian-accented medical speech in Hindi, Tamil, Bengali, and 15+ other languages. Parrotlet-V Lite (4B vision LLM) reads prescriptions, lab reports, and clinical documents with handwriting OCR and structured extraction. Parrotlet-E powers multilingual medical embeddings across 22 Indian languages, anchored by IndicMTEB — a benchmark we built and open-sourced for medical NLP evaluation in India.\n\nBuilt KARMA (OpenMedEvalKit), an open-source evaluation framework for medical AI — because you can't improve what you can't measure, and most medical AI benchmarks don't reflect real Indian clinical conditions. Released four domain-specific evaluation datasets alongside it.\n\nOn the product side: EkaScribe (ambient AI medical scribe, generates structured SOAP notes in real-time from doctor-patient conversations), DocAssist (clinical AI assistant with drug interaction alerts and voice documentation), and Document Understanding (automated parsing of lab reports, prescriptions, and insurance claims with SNOMED-CT/LOINC coding). These run at production scale across thousands of doctors on the EkaCare platform.",
     "url": "https://eka.care"
   },
   {
@@ -12,7 +12,7 @@
     "company": "VY Labs Technologies (Synaptic)",
     "role": "Head of Data Science",
     "period": "Jan 2018 – Jan 2021",
-    "description": "Strategizing and building AI/ML-based products for private equity investors. Worked on knowledge graphs, graph ML, time-series analysis, anomaly detection, and diverse NLP tasks.",
+    "description": "Built the data science function at Synaptic, a company selling AI-powered intelligence on private companies to institutional investors. The challenge: most of the interesting signal about private companies is unstructured, noisy, and scattered — employee reviews, job postings, news, regulatory filings, web footprints.\n\nBuilt NLP pipelines to classify and extract signal from Glassdoor reviews at scale — sentiment, topic modeling, and forward-looking indicators of company trajectory. Built a graph ML system to map competitive relationships across thousands of private companies, identifying clusters, tracking market structure shifts, and flagging emerging competitors before they become obvious.\n\nAlso worked on time-series signals as alternate economic indicators: NYC 311 noise complaints as a proxy for urban economic recovery post-COVID, US electricity demand tracking as a leading industrial activity signal. The underlying idea throughout: any trace of human behavior at scale, if measured carefully, tells you something real about what's happening in the economy.",
     "url": "https://synaptic.com"
   },
   {
@@ -20,7 +20,7 @@
     "company": "MusicMuni Labs",
     "role": "Co-Founder",
     "period": "2016 – 2017",
-    "description": "Developed the technology behind Riyaz, an AI guru for singing assessment (1M+ installs, 10K DAU). Led product development, content creation, and social media marketing.",
+    "description": "Co-founded MusicMuni Labs to commercialize research on AI for Indian classical music. Built Riyaz — an AI-powered guru for Indian classical vocal practice. The app listens as you sing, understands the raga you're practicing, and gives real-time feedback on pitch accuracy, tonal quality, and adherence to the raga's grammar.\n\nReached 1M+ installs and 10K daily active users. Led the full stack: ML model development, product design, content creation, and growth. The core technical challenge was building a pitch analysis and singing assessment system that worked robustly on a smartphone, in real time, without internet — for a musical tradition where the margin for error is measured in microtones.",
     "url": ""
   },
   {
@@ -28,7 +28,7 @@
     "company": "Music Technology Group, Universitat Pompeu Fabra",
     "role": "Doctoral Researcher",
     "period": "2011 – 2016",
-    "description": "Member of ERC-funded CompMusic project led by Prof. Xavier Serra. Worked on computational models for melodic description of Indian art music. Core member of ERC project CAMUT for commercial exploitation of CompMusic technologies.",
+    "description": "Five years of doctoral research at one of the world's leading music technology labs, under Prof. Xavier Serra, within the ERC-funded CompMusic project — a landmark effort to build computational tools for non-Western music traditions.\n\nMy focus was Indian classical music: how do you teach a computer to understand a raga? A raga is not a scale — it's a complex melodic grammar, a set of rules about which notes to use, how to ornament them, how phrases unfold over time. Formalizing this computationally, from raw audio, was the central problem.\n\nBuilt computational models for tonic identification (the reference pitch everything else is measured against), raga recognition using phrase-level melodic representations, melodic similarity for large-scale pattern discovery, and automated methods for mining melodic motifs across hundreds of hours of archival recordings. Published 22 papers across ISMIR, ICASSP, Journal of New Music Research, and related venues.\n\nAlso core member of the CAMUT project, working on commercial exploitation of CompMusic technologies. Co-developed Dunya, a web platform for exploring and analyzing the CompMusic music corpora. Contributed to Essentia, the open-source audio analysis library (now widely used across the industry).",
     "url": "https://www.upf.edu/web/mtg"
   },
   {
@@ -36,7 +36,7 @@
     "company": "Aynur Labs (Stringwars.co)",
     "role": "R&D Consultant",
     "period": "2012 – 2013",
-    "description": "Developed state-of-the-art algorithms for real-time chord recognition and pitch tracking on mobile devices, integrated into guitar learning mobile applications.",
+    "description": "Built real-time chord recognition and pitch tracking algorithms for mobile guitar learning applications. The constraint: accurate, low-latency signal processing running entirely on-device. Developed and optimized these systems for integration into consumer guitar learning apps.",
     "url": ""
   },
   {
@@ -44,7 +44,7 @@
     "company": "Sensibol Audio Technologies",
     "role": "R&D Engineer",
     "period": "2011",
-    "description": "Developed a robust song version identification system capable of detecting remixes and cover versions. Built a system to automatically identify song structure sections and a music hook identification system.",
+    "description": "Built a robust song version identification system capable of detecting remixes and cover versions across large catalogs. Also built systems for automatic song structure detection (verse, chorus, bridge segmentation) and music hook identification — finding the most memorable or commercially significant segments of a track.",
     "url": "https://sensibol.com"
   },
   {
@@ -52,7 +52,7 @@
     "company": "Digital Audio Processing Lab, IIT Bombay",
     "role": "Researcher",
     "period": "2010 – 2011",
-    "description": "Worked with Prof. Preeti Rao on Music Information Retrieval topics, focused on pattern matching-based approaches for tempo estimation from audio recordings.",
+    "description": "Research with Prof. Preeti Rao on Music Information Retrieval. Worked on pattern matching-based approaches for tempo estimation from audio recordings of Indian classical and folk music.",
     "url": ""
   },
   {
@@ -60,7 +60,7 @@
     "company": "Anveshan Telecom",
     "role": "Senior Engineer",
     "period": "Dec 2008 – Jan 2010",
-    "description": "Developed noise reduction, automatic volume control, and echo cancellation systems for VOIP and wire-line networks. Implemented Group3 FAX MODEMs and G766 FAX protocols for digital circuit multiplexing equipment.",
+    "description": "Built noise reduction, automatic volume control, and echo cancellation systems for VOIP and wire-line networks. Implemented Group 3 FAX MODEMs and G.766 FAX protocols for digital circuit multiplexing equipment.",
     "url": ""
   },
   {
@@ -68,7 +68,7 @@
     "company": "ITTIAM Systems",
     "role": "Engineer",
     "period": "Jul 2008 – Dec 2008",
-    "description": "Platform-specific optimization of Windows Media Audio (WMA) decoder on ARM CortexA8 processor.",
+    "description": "Platform-specific optimization of Windows Media Audio (WMA) decoder on ARM Cortex-A8. First job out of IIT Kanpur — learned how much performance lives in the gap between algorithm and hardware.",
     "url": "https://www.ittiam.com"
   }
 ]

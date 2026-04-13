@@ -15,10 +15,10 @@ test('nav has correct links', async ({ page }) => {
 
 test('work page renders all entries', async ({ page }) => {
   await page.goto('/work');
-  await expect(page.getByText('EkaCare')).toBeVisible();
-  await expect(page.getByText('MusicMuni Labs')).toBeVisible();
-  await expect(page.getByText('Digital Audio Processing Lab')).toBeVisible();
-  await expect(page.getByText('ITTIAM Systems')).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Orbi Health (EkaCare)' })).toBeVisible();
+  await expect(page.getByText('MusicMuni Labs', { exact: true })).toBeVisible();
+  await expect(page.getByText('Digital Audio Processing Lab, IIT Bombay', { exact: true })).toBeVisible();
+  await expect(page.getByText('ITTIAM Systems', { exact: true })).toBeVisible();
 });
 
 test('projects page shows apps and hacks with filters', async ({ page }) => {
@@ -43,7 +43,7 @@ test('papers page shows blogs and papers with filters', async ({ page }) => {
 test('about page shows bio, education, reviewer roles', async ({ page }) => {
   await page.goto('/about');
   await expect(page.getByRole('heading', { name: 'Sankalp Gulati' })).toBeVisible();
-  await expect(page.getByText('IIT Kanpur')).toBeVisible();
+  await expect(page.getByText('Indian Institute of Technology (IIT) Kanpur')).toBeVisible();
   await expect(page.getByText('International Society for Music Information Retrieval (ISMIR)')).toBeVisible();
 });
 
