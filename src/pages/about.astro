@@ -1,0 +1,236 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const reviewerRoles = [
+  { venue: 'International Society for Music Information Retrieval (ISMIR)', years: '2013–2018', note: '5 years' },
+  { venue: 'IEEE/ACM Transactions on Audio, Speech, and Language Processing', years: '2016, 2017', note: '' },
+  { venue: 'IEEE Transactions on Multimedia', years: '2017', note: '' },
+  { venue: 'Journal of New Music Research (JNMR)', years: '2016', note: '' },
+  { venue: 'EURASIP Journal on Audio, Speech, and Music Processing', years: '2018', note: '' },
+  { venue: 'IEEE Journal of Selected Topics in Signal Processing', years: '2018', note: '' },
+  { venue: 'Journal of Intelligent Information Systems (JIIS)', years: '2016', note: '' },
+  { venue: 'Speech Music and Mind (SMM)', years: '2018', note: '' },
+  { venue: 'National Conference on Communications (NCC)', years: '2015', note: '' },
+];
+---
+
+<BaseLayout title="About — Sankalp Gulati">
+  <div class="container section">
+
+    <div class="about-hero">
+      <img src="/photo.jpg" alt="Sankalp Gulati" class="about-photo" />
+      <div class="about-intro">
+        <h1 class="about-name">Sankalp Gulati</h1>
+        <p class="about-role">Chief Data Scientist · EkaCare</p>
+        <div class="about-links">
+          <a href="https://www.linkedin.com/in/sankalpgulati/" target="_blank" rel="noopener" class="about-link">LinkedIn</a>
+          <a href="https://scholar.google.com/citations?user=rJSKxAMAAAAJ&hl=en" target="_blank" rel="noopener" class="about-link">Google Scholar</a>
+          <a href="https://github.com/sankalpg" target="_blank" rel="noopener" class="about-link">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-body">
+
+      <section class="about-section">
+        <h2 class="section-label">Bio</h2>
+        <div class="bio-text">
+          <p>
+            I'm a data scientist and AI researcher building purpose-driven machine learning systems. Currently Chief Data Scientist at <strong>EkaCare</strong>, where I lead the AI/ML team building sovereign AI for Indian healthcare — medical ASR, vision models for document understanding, multilingual NLP, clinical decision support, and evaluation frameworks.
+          </p>
+          <p>
+            My work at EkaCare includes the Parrotlet family of models (ASR, vision, embeddings), KARMA (open evaluation framework for medical AI), IndicMTEB (multilingual medical embedding benchmark), and several production-deployed clinical tools including EkaScribe, DocAssist, and Document Understanding.
+          </p>
+          <p>
+            Before healthcare AI, I spent a decade in <strong>Music Information Retrieval</strong>. I did my PhD at the Music Technology Group, Universitat Pompeu Fabra (Barcelona), working on computational approaches for melodic analysis of Indian classical music within the ERC-funded CompMusic project. My research covered tonic identification, raga recognition, melodic similarity, and large-scale pattern discovery in audio corpora. I have 22 publications across ISMIR, ICASSP, JNMR, and other top venues.
+          </p>
+          <p>
+            In between, I was Head of Data Science at <strong>Synaptic / VY Labs</strong> (2018–2021), working on alternate data — NLP on company data, graph ML for competitive intelligence, and time series analysis of non-traditional economic signals.
+          </p>
+          <p>
+            I co-founded <strong>MusicMuni Labs</strong>, building Riyaz — an AI-powered Indian classical music practice app that reached 1M+ installs.
+          </p>
+          <p>
+            B.Tech, IIT Kanpur. PhD, Universitat Pompeu Fabra, Barcelona.
+          </p>
+        </div>
+      </section>
+
+      <section class="about-section">
+        <h2 class="section-label">Education</h2>
+        <div class="edu-list">
+          <div class="edu-row">
+            <div class="edu-main">
+              <span class="edu-degree">PhD, Music Technology</span>
+              <span class="edu-inst">Music Technology Group, Universitat Pompeu Fabra · Barcelona</span>
+            </div>
+            <span class="edu-year">2016</span>
+          </div>
+          <div class="edu-row">
+            <div class="edu-main">
+              <span class="edu-degree">Master's, Sound and Music Computing</span>
+              <span class="edu-inst">Music Technology Group, Universitat Pompeu Fabra · Barcelona</span>
+            </div>
+            <span class="edu-year">2012</span>
+          </div>
+          <div class="edu-row">
+            <div class="edu-main">
+              <span class="edu-degree">B.Tech, Electrical Engineering</span>
+              <span class="edu-inst">Indian Institute of Technology (IIT) Kanpur</span>
+            </div>
+            <span class="edu-year">2008</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section">
+        <h2 class="section-label">Peer Review</h2>
+        <div class="service-list">
+          {reviewerRoles.map(r => (
+            <div class="service-row">
+              <span class="service-venue">{r.venue}</span>
+              <span class="service-year">{r.years}{r.note ? ` · ${r.note}` : ''}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="about-section">
+        <h2 class="section-label">Teaching</h2>
+        <div class="teaching-list">
+          <div class="teaching-row">
+            <div class="teaching-main">
+              <span class="teaching-course">Audio Signal Processing for Music Applications (ASPMA)</span>
+              <span class="teaching-where">Coursera MOOC · Music Technology Group, UPF · 2014–2015</span>
+              <span class="teaching-desc">Designed and implemented programming assignments and automated assessment tools for a global online course.</span>
+            </div>
+          </div>
+          <div class="teaching-row">
+            <div class="teaching-main">
+              <span class="teaching-course">Processament de So i Música</span>
+              <span class="teaching-where">Universitat Pompeu Fabra, Barcelona · 2013–2015</span>
+              <span class="teaching-desc">Teaching assistant — conducted seminars and lab sessions, created programming assignments with automatic graders.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section" id="contact">
+        <h2 class="section-label">Contact</h2>
+        <div class="contact-links">
+          <a href="https://www.linkedin.com/in/sankalpgulati/" target="_blank" rel="noopener" class="contact-btn">LinkedIn</a>
+          <a href="https://scholar.google.com/citations?user=rJSKxAMAAAAJ&hl=en" target="_blank" rel="noopener" class="contact-btn">Google Scholar</a>
+          <a href="https://github.com/sankalpg" target="_blank" rel="noopener" class="contact-btn">GitHub</a>
+          <a href="https://soundcloud.com/sankalpgulati" target="_blank" rel="noopener" class="contact-btn">SoundCloud</a>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .about-hero {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding: 36px 0 40px;
+    border-bottom: 1px solid #e5e7eb;
+    margin-bottom: 40px;
+  }
+  .about-photo {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+  .about-name { font-size: 26px; font-weight: 900; color: var(--navy); margin: 0 0 4px; }
+  .about-role { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; opacity: 0.5; margin: 0 0 14px; }
+  .about-links { display: flex; flex-wrap: wrap; gap: 8px; }
+  .about-link {
+    font-size: 12px;
+    color: var(--navy);
+    background: #f3f4f6;
+    padding: 5px 12px;
+    border-radius: 2px;
+    border: 1px solid #e5e7eb;
+    transition: background 0.15s;
+  }
+  .about-link:hover { background: #e5e7eb; text-decoration: none; }
+
+  .about-body { display: flex; flex-direction: column; gap: 48px; }
+  .about-section {}
+  .section-label {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #9ca3af;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #f3f4f6;
+  }
+
+  /* Bio */
+  .bio-text { display: flex; flex-direction: column; gap: 14px; }
+  .bio-text p { font-size: 14px; line-height: 1.75; color: #374151; margin: 0; }
+  .bio-text strong { color: var(--navy); font-weight: 700; }
+
+  /* Education */
+  .edu-list { display: flex; flex-direction: column; }
+  .edu-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .edu-row:last-child { border-bottom: none; }
+  .edu-main { display: flex; flex-direction: column; gap: 3px; }
+  .edu-degree { font-size: 14px; font-weight: 600; color: var(--navy); }
+  .edu-inst { font-size: 12px; color: #6b7280; }
+  .edu-year { font-size: 12px; color: #9ca3af; flex-shrink: 0; }
+
+  /* Service */
+  .service-list { display: flex; flex-direction: column; }
+  .service-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding: 10px 0;
+    border-bottom: 1px solid #f3f4f6;
+    flex-wrap: wrap;
+  }
+  .service-row:last-child { border-bottom: none; }
+  .service-venue { font-size: 13px; color: var(--navy); font-weight: 500; }
+  .service-year { font-size: 12px; color: #6b7280; flex-shrink: 0; }
+
+  /* Teaching */
+  .teaching-list { display: flex; flex-direction: column; gap: 12px; }
+  .teaching-row { padding: 14px; background: #f9fafb; border-radius: 4px; border: 1px solid #f3f4f6; }
+  .teaching-main { display: flex; flex-direction: column; gap: 3px; }
+  .teaching-course { font-size: 14px; font-weight: 700; color: var(--navy); }
+  .teaching-where { font-size: 11px; color: #6b7280; }
+  .teaching-desc { font-size: 13px; color: #6b7280; line-height: 1.5; margin-top: 5px; }
+
+  /* Contact */
+  .contact-links { display: flex; flex-wrap: wrap; gap: 10px; }
+  .contact-btn {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--navy);
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    padding: 8px 18px;
+    border-radius: 2px;
+    transition: background 0.15s;
+  }
+  .contact-btn:hover { background: #f3f4f6; text-decoration: none; }
+
+  @media (max-width: 480px) {
+    .about-hero { flex-direction: column; align-items: flex-start; }
+  }
+</style>

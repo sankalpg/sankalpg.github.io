@@ -5,51 +5,46 @@ test('homepage loads with hero headline', async ({ page }) => {
   await expect(page.getByRole('heading', { name: /Building Sovereign AI/i })).toBeVisible();
 });
 
-test('homepage nav has domain links', async ({ page }) => {
+test('nav has correct links', async ({ page }) => {
   await page.goto('/');
   await expect(page.getByRole('link', { name: 'Work' })).toBeVisible();
-  await expect(page.getByRole('link', { name: 'Healthcare AI' })).toBeVisible();
-  await expect(page.getByRole('link', { name: 'Music AI' })).toBeVisible();
-  await expect(page.getByRole('link', { name: 'Alternate Data' })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Projects' })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Blogs & Papers' })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'About' })).toBeVisible();
 });
 
 test('work page renders all entries', async ({ page }) => {
   await page.goto('/work');
   await expect(page.getByText('EkaCare')).toBeVisible();
   await expect(page.getByText('MusicMuni Labs')).toBeVisible();
-  await expect(page.getByText('Sensibol Audio Technologies')).toBeVisible();
   await expect(page.getByText('Digital Audio Processing Lab')).toBeVisible();
   await expect(page.getByText('ITTIAM Systems')).toBeVisible();
 });
 
-test('healthcare page shows apps and research', async ({ page }) => {
-  await page.goto('/healthcare');
-  await expect(page.getByRole('heading', { name: 'Healthcare AI' })).toBeVisible();
+test('projects page shows apps and hacks with filters', async ({ page }) => {
+  await page.goto('/projects');
   await expect(page.getByText('EkaScribe')).toBeVisible();
-  await expect(page.getByText('DocAssist')).toBeVisible();
-  await expect(page.getByText('Parrotlet-A 2 Pro')).toBeVisible();
-});
-
-test('healthcare tag filter works', async ({ page }) => {
-  await page.goto('/healthcare');
-  await page.getByRole('button', { name: 'ASR' }).click();
-  await expect(page.getByText('Parrotlet-A 2 Pro')).toBeVisible();
-  await expect(page.getByText('Leveraging Semantic Technologies')).not.toBeVisible();
-});
-
-test('music-ai page shows projects and papers', async ({ page }) => {
-  await page.goto('/music-ai');
-  await expect(page.getByRole('heading', { name: 'Music AI' })).toBeVisible();
   await expect(page.getByText('Ragawise')).toBeVisible();
-  await expect(page.getByText('Hindify')).toBeVisible();
-  await expect(page.getByRole('link', { name: /Computational Approaches for Melodic Description/i })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'CompMusic' })).toBeVisible();
+  await page.getByRole('button', { name: 'Music AI' }).click();
+  await expect(page.getByText('EkaScribe')).not.toBeVisible();
+  await expect(page.getByText('Ragawise')).toBeVisible();
 });
 
-test('alternate-data page shows articles', async ({ page }) => {
-  await page.goto('/alternate-data');
-  await expect(page.getByRole('heading', { name: 'Alternate Data' })).toBeVisible();
+test('papers page shows blogs and papers with filters', async ({ page }) => {
+  await page.goto('/papers');
+  await expect(page.getByText('Parrotlet-A 2 Pro')).toBeVisible();
+  await expect(page.getByRole('link', { name: /Computational Approaches for Melodic Description/i })).toBeVisible();
   await expect(page.getByText('Classifying Glassdoor Reviews')).toBeVisible();
-  await expect(page.getByText('Tracking US Electricity Demand')).toBeVisible();
+  await page.getByRole('button', { name: 'Music AI' }).click();
+  await expect(page.getByText('Parrotlet-A 2 Pro')).not.toBeVisible();
+});
+
+test('about page shows bio, education, reviewer roles', async ({ page }) => {
+  await page.goto('/about');
+  await expect(page.getByRole('heading', { name: 'Sankalp Gulati' })).toBeVisible();
+  await expect(page.getByText('IIT Kanpur')).toBeVisible();
+  await expect(page.getByText('International Society for Music Information Retrieval (ISMIR)')).toBeVisible();
 });
 
 test('nav logo links to homepage', async ({ page }) => {

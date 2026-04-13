@@ -7,26 +7,44 @@ interface Props {
   urlStatus: 'ok' | 'possibly_blocked' | 'dead';
   attribution?: string;
   description?: string;
-  type: 'spotlight' | 'paper' | 'thesis';
+  type: 'spotlight' | 'paper' | 'thesis' | 'blog';
+  extraLinks?: Array<{ label: string; url: string }>;
+  tags?: string[];
+  company?: string;
+  topic?: string;
 }
-const { title, year, venue, url, urlStatus, attribution, description } = Astro.props;
-const showLink = urlStatus !== 'dead' && url;
+const { title, year, venue, url, urlStatus, attribution, description, extraLinks = [], tags = [], company, topic } = Astro.props;
+const hasDirectLink = urlStatus === 'ok' && url;
+const hasScholarFallback = urlStatus === 'possibly_blocked' && url;
 ---
+
 <div class="entry">
   <div class="entry__main">
-    {showLink
+    {hasDirectLink
       ? <a href={url} target="_blank" rel="noopener" class="entry__title">{title}</a>
-      : <span class="entry__title entry__title--dead">{title}</span>
+      : <span class:list={['entry__title', { 'entry__title--dead': urlStatus === 'dead' }]}>{title}</span>
     }
     {(venue || year) && (
       <span class="entry__meta">
-        {venue && <span>{venue}</span>}
-        {year && <span>{year}</span>}
+        {venue && <span class="entry__venue">{venue}</span>}
+        {year && <span class="entry__year">{year}</span>}
       </span>
     )}
     {description && <p class="entry__desc">{description}</p>}
-    {attribution && <span class="tag">{attribution}</span>}
-    {urlStatus === 'dead' && <span class="entry__unavailable">PDF unavailable</span>}
+    <div class="entry__foot">
+      {(company || attribution) && (
+        <span class="entry__company">{company ?? attribution}</span>
+      )}
+      {topic && <span class="entry__topic">{topic}</span>}
+      {tags.map(t => <span class="tag">{t}</span>)}
+      {hasScholarFallback && (
+        <a href={url} target="_blank" rel="noopener" class="entry__scholar-link">Google Scholar ↗</a>
+      )}
+      {urlStatus === 'dead' && <span class="entry__unavailable">PDF unavailable</span>}
+      {extraLinks.map(l => (
+        <a href={l.url} target="_blank" rel="noopener" class="entry__extra-link">{l.label} ↗</a>
+      ))}
+    </div>
   </div>
 </div>
 
@@ -44,8 +62,8 @@ const showLink = urlStatus !== 'dead' && url;
     display: block;
     margin-bottom: 4px;
   }
-  .entry__title--dead { opacity: 0.5; cursor: default; }
-  a.entry__title:hover { text-decoration: underline; }
+  .entry__title--dead { opacity: 0.45; }
+  a.entry__title:hover { text-decoration: underline; color: #2563eb; }
   .entry__meta {
     display: flex;
     gap: 12px;
@@ -53,12 +71,51 @@ const showLink = urlStatus !== 'dead' && url;
     color: var(--gray-500);
     margin-bottom: 4px;
   }
+  .entry__venue { font-style: italic; }
   .entry__desc {
     font-size: 12px;
     color: var(--gray-700);
     line-height: 1.5;
+    margin: 4px 0 6px;
+  }
+  .entry__foot {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
     margin-top: 4px;
   }
+  .entry__company {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #6b7280;
+    background: #f3f4f6;
+    padding: 2px 7px;
+    border-radius: 10px;
+  }
+  .entry__topic {
+    font-size: 10px;
+    font-weight: 600;
+    color: #2563eb;
+    background: #eff6ff;
+    padding: 2px 7px;
+    border-radius: 10px;
+  }
+  .entry__scholar-link {
+    font-size: 11px;
+    color: #2563eb;
+    font-weight: 600;
+    margin-left: 4px;
+  }
+  .entry__scholar-link:hover { text-decoration: underline; }
+  .entry__extra-link {
+    font-size: 11px;
+    color: #7c3aed;
+    font-weight: 600;
+  }
+  .entry__extra-link:hover { text-decoration: underline; }
   .entry__unavailable {
     font-size: 10px;
     color: var(--gray-500);

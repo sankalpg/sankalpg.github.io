@@ -1,30 +1,209 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ProjectCard from '../components/ProjectCard.astro';
-import projects from '../content/projects.json';
+import allProjects from '../content/all-projects.json';
+
+const topics = ['Healthcare AI', 'Music AI'];
+const categories = ['application', 'project', 'hack'] as const;
+const categoryLabel: Record<string, string> = {
+  application: 'Application',
+  project: 'Project',
+  hack: 'Hack',
+};
 ---
+
 <BaseLayout title="Projects — Sankalp Gulati">
   <div class="container section">
-    <div class="section__header">
-      <h1 class="section__title">Projects</h1>
+    <div class="page-header">
+      <h1 class="page-title">Applications &amp; Projects</h1>
+      <p class="page-subtitle">Work across Healthcare AI and Music AI — products, research projects, and hackathon builds.</p>
     </div>
-    <div class="projects-grid">
-      {projects.map(p => (
-        <ProjectCard
-          title={p.title}
-          description={p.description}
-          url={p.url || undefined}
-          tags={p.tags}
-        />
+
+    <div class="filter-bar">
+      <div class="filter-group">
+        <span class="filter-label">Topic</span>
+        <button class="filter-btn filter-btn--active" data-filter="topic" data-value="all">All</button>
+        {topics.map(t => (
+          <button class="filter-btn" data-filter="topic" data-value={t}>{t}</button>
+        ))}
+      </div>
+      <div class="filter-group">
+        <span class="filter-label">Type</span>
+        <button class="filter-btn filter-btn--active" data-filter="category" data-value="all">All</button>
+        {categories.map(c => (
+          <button class="filter-btn" data-filter="category" data-value={c}>{categoryLabel[c]}</button>
+        ))}
+      </div>
+    </div>
+
+    <div class="projects-grid" id="projectsGrid">
+      {allProjects.map(p => (
+        <div
+          class="project-card"
+          data-topic={p.topic}
+          data-category={p.category}
+        >
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">{p.title}</h3>
+              <p class="card-subtitle">{p.subtitle}</p>
+            </div>
+            {'award' in p && p.award && (
+              <span class="award-badge">🏆 {p.award}</span>
+            )}
+          </div>
+          <p class="card-desc">{p.description}</p>
+          <div class="card-foot">
+            <div class="card-meta">
+              <span class="meta-company">{p.company}</span>
+              <span class:list={['meta-topic', `topic-${p.topic.toLowerCase().replace(/\s+/g, '-').replace('alternate-data', 'alt')}`]}>{p.topic}</span>
+              <span class="meta-cat">{categoryLabel[p.category]}</span>
+            </div>
+            <div class="card-tags">
+              {p.tags.map(t => <span class="tag">{t}</span>)}
+            </div>
+            {p.links.length > 0 && (
+              <div class="card-links">
+                {p.links.map(l => (
+                  <a href={l.url} target="_blank" rel="noopener" class="card-link">{l.label} →</a>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
       ))}
     </div>
+
+    <p class="no-results" id="noResults" style="display:none">No projects match these filters.</p>
   </div>
 </BaseLayout>
 
+<script>
+  const grid = document.getElementById('projectsGrid')!;
+  const noResults = document.getElementById('noResults')!;
+  const cards = Array.from(grid.querySelectorAll<HTMLElement>('.project-card'));
+
+  let active = { topic: 'all', category: 'all' };
+
+  document.querySelectorAll<HTMLElement>('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filterType = btn.dataset.filter as 'topic' | 'category';
+      const value = btn.dataset.value!;
+
+      // Update active state for this group
+      document.querySelectorAll(`.filter-btn[data-filter="${filterType}"]`).forEach(b => b.classList.remove('filter-btn--active'));
+      btn.classList.add('filter-btn--active');
+      active[filterType] = value;
+
+      let visible = 0;
+      cards.forEach(card => {
+        const topicMatch = active.topic === 'all' || card.dataset.topic === active.topic;
+        const catMatch = active.category === 'all' || card.dataset.category === active.category;
+        const show = topicMatch && catMatch;
+        card.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+      noResults.style.display = visible === 0 ? '' : 'none';
+    });
+  });
+</script>
+
 <style>
+  .page-header { margin-bottom: 28px; }
+  .page-title { font-size: clamp(22px, 4vw, 32px); font-weight: 900; color: var(--navy); margin-bottom: 8px; }
+  .page-subtitle { font-size: 14px; color: var(--gray-700); line-height: 1.6; }
+
+  .filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 28px;
+    padding: 14px 16px;
+    background: #f9fafb;
+    border-radius: 4px;
+    border: 1px solid #f3f4f6;
+  }
+  .filter-group { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+  .filter-label {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #9ca3af;
+    margin-right: 4px;
+  }
+  .filter-btn {
+    font-size: 11px;
+    padding: 4px 11px;
+    border-radius: 20px;
+    border: 1px solid #e5e7eb;
+    background: #fff;
+    color: #374151;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+    font-family: inherit;
+  }
+  .filter-btn:hover { border-color: #9ca3af; }
+  .filter-btn--active {
+    background: var(--navy);
+    color: #fff;
+    border-color: var(--navy);
+  }
+
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 16px;
   }
+  .project-card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .card-title { font-size: 15px; font-weight: 700; margin: 0; color: var(--navy); }
+  .card-subtitle { font-size: 11px; color: #6b7280; margin: 3px 0 0; }
+  .award-badge {
+    font-size: 10px;
+    background: #fef9c3;
+    color: #78350f;
+    padding: 3px 8px;
+    border-radius: 10px;
+    white-space: nowrap;
+    border: 1px solid #fde68a;
+    flex-shrink: 0;
+  }
+  .card-desc { font-size: 13px; line-height: 1.6; color: #4b5563; margin: 0; flex: 1; }
+  .card-foot { display: flex; flex-direction: column; gap: 8px; }
+  .card-meta { display: flex; flex-wrap: wrap; gap: 5px; }
+  .meta-company {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.5px;
+    text-transform: uppercase; color: #6b7280;
+    background: #f3f4f6; padding: 2px 7px; border-radius: 10px;
+  }
+  .meta-topic {
+    font-size: 10px; font-weight: 600;
+    padding: 2px 7px; border-radius: 10px;
+  }
+  .topic-healthcare-ai { color: #2563eb; background: #eff6ff; }
+  .topic-music-ai { color: #7c3aed; background: #f5f3ff; }
+  .topic-alternate-data, .topic-alt { color: #0891b2; background: #ecfeff; }
+  .meta-cat {
+    font-size: 10px; color: #9ca3af;
+    padding: 2px 7px; border-radius: 10px;
+    border: 1px solid #e5e7eb;
+  }
+  .card-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+  .card-links { display: flex; flex-wrap: wrap; gap: 10px; }
+  .card-link { font-size: 12px; color: #2563eb; font-weight: 600; }
+  .card-link:hover { text-decoration: underline; }
+  .no-results { font-size: 14px; color: #9ca3af; text-align: center; padding: 40px 0; }
 </style>

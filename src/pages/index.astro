@@ -5,14 +5,17 @@ import HomeSectionPreview from '../components/HomeSectionPreview.astro';
 import WorkCard from '../components/WorkCard.astro';
 
 import work from '../content/work.json';
-import healthApps from '../content/healthcare-apps.json';
-import musicProjects from '../content/music-projects.json';
-import altData from '../content/alternate-data.json';
+import allProjects from '../content/all-projects.json';
+import allPapers from '../content/all-papers.json';
 
 const topWork = work.slice(0, 2);
-const topApps = healthApps.slice(0, 3);
-const topMusicProjects = [...musicProjects.projects.slice(0, 2), ...musicProjects.hacks.slice(0, 1)];
-const topAlt = altData.slice(0, 2);
+// Show a mix: 2 applications + 1 hack
+const topProjects = [
+  ...allProjects.filter(p => p.category === 'application').slice(0, 2),
+  ...allProjects.filter(p => p.category === 'hack').slice(0, 1),
+];
+// Show 3 recent papers/blogs
+const topPapers = allPapers.slice(0, 3);
 ---
 <BaseLayout title="Sankalp Gulati — AI Researcher & Data Scientist">
   <Hero />
@@ -29,80 +32,92 @@ const topAlt = altData.slice(0, 2);
     ))}
   </HomeSectionPreview>
 
-  <HomeSectionPreview title="Healthcare AI" href="/healthcare" alt>
-    <div class="domain-preview">
-      <p class="domain-preview__note">Building sovereign AI for Indian healthcare — ASR, Vision, NLP, Clinical Decision Support.</p>
-      <div class="domain-chips">
-        {topApps.map(app => (
-          <div class="domain-chip health-chip">
-            <span class="chip-title">{app.title}</span>
-            <span class="chip-sub">{app.subtitle}</span>
+  <HomeSectionPreview title="Projects" href="/projects" alt>
+    <div class="preview-grid">
+      {topProjects.map(p => (
+        <div class="preview-card">
+          <div class="preview-card__top">
+            <span class="preview-card__title">{p.title}</span>
+            {'award' in p && p.award && <span class="preview-card__award">🏆</span>}
           </div>
-        ))}
-      </div>
+          <span class="preview-card__sub">{p.subtitle}</span>
+          <div class="preview-card__meta">
+            <span class:list={['meta-topic', `topic-${p.topic.toLowerCase().replace(/\s+/g, '-')}`]}>{p.topic}</span>
+            <span class="meta-company">{p.company}</span>
+          </div>
+        </div>
+      ))}
     </div>
   </HomeSectionPreview>
 
-  <HomeSectionPreview title="Music AI" href="/music-ai">
-    <div class="domain-preview">
-      <p class="domain-preview__note">MIR research, music hacks, and 22 publications across ISMIR, ICASSP, JNMR.</p>
-      <div class="domain-chips">
-        {topMusicProjects.map(proj => (
-          <div class="domain-chip music-chip">
-            <span class="chip-title">{proj.title}</span>
-            {'award' in proj && proj.award && <span class="chip-award">🏆</span>}
+  <HomeSectionPreview title="Blogs & Papers" href="/papers">
+    <div class="papers-preview">
+      {topPapers.map(p => (
+        <div class="paper-row">
+          <div class="paper-row__main">
+            <span class="paper-row__title">{p.title}</span>
+            <span class="paper-row__meta">{p.company} · {p.year}</span>
           </div>
-        ))}
-      </div>
-    </div>
-  </HomeSectionPreview>
-
-  <HomeSectionPreview title="Alternate Data" href="/alternate-data" alt>
-    <div class="domain-preview">
-      <p class="domain-preview__note">NLP, Graph ML, and time series on non-traditional data signals.</p>
-      <div class="alt-articles">
-        {topAlt.map(a => (
-          <div class="alt-article-row">
-            <a href={a.url} target="_blank" rel="noopener" class="alt-article-title">{a.title}</a>
-            <div class="alt-article-tags">
-              {a.tags.map(tag => <span class="tag">{tag}</span>)}
-            </div>
+          <div class="paper-row__badges">
+            <span class:list={['meta-topic', `topic-${p.topic.toLowerCase().replace(/\s+/g, '-')}`]}>{p.topic}</span>
+            <span class="meta-type">{p.type}</span>
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
     </div>
   </HomeSectionPreview>
 </BaseLayout>
 
 <style>
-  .domain-preview { display: flex; flex-direction: column; gap: 14px; }
-  .domain-preview__note {
-    font-size: 13px;
-    color: var(--gray-700);
-    line-height: 1.6;
-    margin: 0;
-    font-style: italic;
-  }
-  .domain-chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-  .domain-chip {
+  /* Projects preview */
+  .preview-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+  .preview-card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    padding: 12px 14px;
     display: flex;
     flex-direction: column;
-    padding: 8px 12px;
-    border-radius: 4px;
-    gap: 2px;
+    gap: 4px;
+    min-width: 180px;
   }
-  .health-chip { background: #eff6ff; border: 1px solid #bfdbfe; }
-  .music-chip { background: #f5f3ff; border: 1px solid #ddd6fe; }
-  .chip-title { font-size: 12px; font-weight: 700; color: var(--navy); }
-  .chip-sub { font-size: 10px; color: #6b7280; }
-  .chip-award { font-size: 11px; }
-  .alt-articles { display: flex; flex-direction: column; gap: 10px; }
-  .alt-article-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
-  .alt-article-title { font-size: 13px; font-weight: 600; color: var(--navy); flex: 1; }
-  .alt-article-title:hover { color: #0891b2; }
-  .alt-article-tags { display: flex; gap: 4px; flex-shrink: 0; }
+  .preview-card__top { display: flex; align-items: center; gap: 6px; }
+  .preview-card__title { font-size: 13px; font-weight: 700; color: var(--navy); }
+  .preview-card__award { font-size: 12px; }
+  .preview-card__sub { font-size: 11px; color: #6b7280; }
+  .preview-card__meta { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+
+  /* Papers preview */
+  .papers-preview { display: flex; flex-direction: column; gap: 0; }
+  .paper-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .paper-row:last-child { border-bottom: none; }
+  .paper-row__main { display: flex; flex-direction: column; gap: 3px; flex: 1; }
+  .paper-row__title { font-size: 13px; font-weight: 600; color: var(--navy); line-height: 1.4; }
+  .paper-row__meta { font-size: 11px; color: #9ca3af; }
+  .paper-row__badges { display: flex; flex-direction: column; gap: 4px; align-items: flex-end; flex-shrink: 0; }
+
+  /* Shared meta badges */
+  .meta-topic {
+    font-size: 10px; font-weight: 600;
+    padding: 2px 7px; border-radius: 10px;
+  }
+  .topic-healthcare-ai { color: #2563eb; background: #eff6ff; }
+  .topic-music-ai { color: #7c3aed; background: #f5f3ff; }
+  .topic-alternate-data { color: #0891b2; background: #ecfeff; }
+  .meta-company {
+    font-size: 10px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase;
+    color: #6b7280; background: #f3f4f6; padding: 2px 7px; border-radius: 10px;
+  }
+  .meta-type {
+    font-size: 10px; color: #9ca3af;
+    padding: 2px 7px; border-radius: 10px;
+    border: 1px solid #e5e7eb; text-transform: capitalize;
+  }
 </style>

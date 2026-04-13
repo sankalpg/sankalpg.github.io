@@ -1,0 +1,154 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ResearchEntryRow from '../components/ResearchEntryRow.astro';
+import allPapers from '../content/all-papers.json';
+
+type UrlStatus = 'ok' | 'possibly_blocked' | 'dead';
+type EntryType = 'blog' | 'paper' | 'thesis';
+
+const topics = ['Healthcare AI', 'Music AI', 'Alternate Data'] as const;
+const typeLabels: Record<string, string> = { blog: 'Blog', paper: 'Paper', thesis: 'Thesis' };
+
+// Sort: theses first among music, then by year desc
+const sorted = [...allPapers].sort((a, b) => {
+  if (a.type === 'thesis' && b.type !== 'thesis') return -1;
+  if (b.type === 'thesis' && a.type !== 'thesis') return 1;
+  return (b.year ?? 0) - (a.year ?? 0);
+});
+
+const scholarUrl = 'https://scholar.google.com/citations?user=rJSKxAMAAAAJ&hl=en';
+---
+
+<BaseLayout title="Blogs & Papers — Sankalp Gulati">
+  <div class="container section">
+    <div class="page-header">
+      <div class="page-header__inner">
+        <div>
+          <h1 class="page-title">Blogs &amp; Papers</h1>
+          <p class="page-subtitle">EkaCare engineering blogs, music information retrieval papers, and alternate data articles.</p>
+        </div>
+        <a href={scholarUrl} target="_blank" rel="noopener" class="scholar-link">Google Scholar →</a>
+      </div>
+    </div>
+
+    <div class="filter-bar">
+      <div class="filter-group">
+        <span class="filter-label">Topic</span>
+        <button class="filter-btn filter-btn--active" data-filter="topic" data-value="all">All</button>
+        {topics.map(t => (
+          <button class="filter-btn" data-filter="topic" data-value={t}>{t}</button>
+        ))}
+      </div>
+      <div class="filter-group">
+        <span class="filter-label">Type</span>
+        <button class="filter-btn filter-btn--active" data-filter="type" data-value="all">All</button>
+        {Object.entries(typeLabels).map(([val, label]) => (
+          <button class="filter-btn" data-filter="type" data-value={val}>{label}</button>
+        ))}
+      </div>
+    </div>
+
+    <div id="papersContainer">
+      {sorted.map(entry => (
+        <div class="filterable-entry" data-topic={entry.topic} data-type={entry.type}>
+          <ResearchEntryRow
+            title={entry.title}
+            year={entry.year}
+            venue={'venue' in entry ? (entry.venue as string) : undefined}
+            url={entry.url}
+            urlStatus={entry.urlStatus as UrlStatus}
+            description={entry.description}
+            type={entry.type as EntryType}
+            extraLinks={'extraLinks' in entry ? (entry.extraLinks as Array<{ label: string; url: string }>) : []}
+            tags={entry.tags}
+            company={entry.company}
+            topic={entry.topic}
+          />
+        </div>
+      ))}
+    </div>
+
+    <p class="no-results" id="noResults" style="display:none">No entries match these filters.</p>
+  </div>
+</BaseLayout>
+
+<script>
+  const container = document.getElementById('papersContainer')!;
+  const noResults = document.getElementById('noResults')!;
+  const entries = Array.from(container.querySelectorAll<HTMLElement>('.filterable-entry'));
+
+  let active = { topic: 'all', type: 'all' };
+
+  document.querySelectorAll<HTMLElement>('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filterType = btn.dataset.filter as 'topic' | 'type';
+      const value = btn.dataset.value!;
+
+      document.querySelectorAll(`.filter-btn[data-filter="${filterType}"]`).forEach(b => b.classList.remove('filter-btn--active'));
+      btn.classList.add('filter-btn--active');
+      active[filterType] = value;
+
+      let visible = 0;
+      entries.forEach(entry => {
+        const topicMatch = active.topic === 'all' || entry.dataset.topic === active.topic;
+        const typeMatch = active.type === 'all' || entry.dataset.type === active.type;
+        const show = topicMatch && typeMatch;
+        entry.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+      noResults.style.display = visible === 0 ? '' : 'none';
+    });
+  });
+</script>
+
+<style>
+  .page-header { margin-bottom: 28px; }
+  .page-header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .page-title { font-size: clamp(22px, 4vw, 32px); font-weight: 900; color: var(--navy); margin-bottom: 8px; }
+  .page-subtitle { font-size: 14px; color: var(--gray-700); line-height: 1.6; }
+  .scholar-link { font-size: 13px; color: #2563eb; font-weight: 600; white-space: nowrap; }
+
+  .filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 28px;
+    padding: 14px 16px;
+    background: #f9fafb;
+    border-radius: 4px;
+    border: 1px solid #f3f4f6;
+  }
+  .filter-group { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+  .filter-label {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #9ca3af;
+    margin-right: 4px;
+  }
+  .filter-btn {
+    font-size: 11px;
+    padding: 4px 11px;
+    border-radius: 20px;
+    border: 1px solid #e5e7eb;
+    background: #fff;
+    color: #374151;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+    font-family: inherit;
+  }
+  .filter-btn:hover { border-color: #9ca3af; }
+  .filter-btn--active {
+    background: var(--navy);
+    color: #fff;
+    border-color: var(--navy);
+  }
+  .no-results { font-size: 14px; color: #9ca3af; text-align: center; padding: 40px 0; }
+</style>
