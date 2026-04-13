@@ -10,7 +10,7 @@ test('nav has correct links', async ({ page }) => {
   await expect(page.getByRole('link', { name: 'Work' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Projects' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Blogs & Papers' })).toBeVisible();
-  await expect(page.getByRole('link', { name: 'About' })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'About', exact: true })).toBeVisible();
 });
 
 test('work page renders all entries', async ({ page }) => {
