@@ -1,5 +1,18 @@
 [
   {
+    "id": "cdss",
+    "title": "CDSS",
+    "subtitle": "Clinical Decision Support System",
+    "description": "AI-powered clinical decision support that assists physicians with evidence-based recommendations, differential diagnosis, and treatment guidance at the point of care.",
+    "company": "EkaCare",
+    "topic": "Healthcare AI",
+    "category": "application",
+    "year": 2024,
+    "url": "",
+    "tags": ["LLM", "Clinical"],
+    "links": []
+  },
+  {
     "id": "ekascribe",
     "title": "EkaScribe",
     "subtitle": "AI Medical Scribe",
@@ -7,9 +20,23 @@
     "company": "EkaCare",
     "topic": "Healthcare AI",
     "category": "application",
+    "year": 2023,
     "url": "https://ekascribe.ai/",
     "tags": ["ASR", "LLM", "Clinical"],
     "links": [{ "label": "Website", "url": "https://ekascribe.ai/" }]
+  },
+  {
+    "id": "docassist",
+    "title": "DocAssist",
+    "subtitle": "Clinical AI for Doctors",
+    "description": "Clinical AI assistant combining voice-powered documentation, intelligent patient profile management, and real-time clinical insights. Features drug interaction alerts, multi-language support, and automated SOAP note generation.",
+    "company": "EkaCare",
+    "topic": "Healthcare AI",
+    "category": "application",
+    "year": 2023,
+    "url": "https://www.eka.care/s/for-doctors/docassist",
+    "tags": ["LLM", "Clinical", "ASR"],
+    "links": [{ "label": "Website", "url": "https://www.eka.care/s/for-doctors/docassist" }]
   },
   {
     "id": "document-understanding",
@@ -19,6 +46,7 @@
     "company": "EkaCare",
     "topic": "Healthcare AI",
     "category": "application",
+    "year": 2022,
     "url": "https://developer.eka.care/eka-medai/technologies/overview",
     "tags": ["Vision", "NLP", "Clinical"],
     "links": [{ "label": "Docs", "url": "https://developer.eka.care/eka-medai/technologies/overview" }]
@@ -31,57 +59,10 @@
     "company": "EkaCare",
     "topic": "Healthcare AI",
     "category": "application",
+    "year": 2021,
     "url": "https://www.eka.care/services/heart-rate-monitor-app-2",
     "tags": ["Signal Processing", "Mobile"],
     "links": [{ "label": "Website", "url": "https://www.eka.care/services/heart-rate-monitor-app-2" }]
-  },
-  {
-    "id": "docassist",
-    "title": "DocAssist",
-    "subtitle": "Clinical AI for Doctors",
-    "description": "Clinical AI assistant combining voice-powered documentation, intelligent patient profile management, and real-time clinical insights. Features drug interaction alerts, multi-language support, and automated SOAP note generation.",
-    "company": "EkaCare",
-    "topic": "Healthcare AI",
-    "category": "application",
-    "url": "https://www.eka.care/s/for-doctors/docassist",
-    "tags": ["LLM", "Clinical", "ASR"],
-    "links": [{ "label": "Website", "url": "https://www.eka.care/s/for-doctors/docassist" }]
-  },
-  {
-    "id": "cdss",
-    "title": "CDSS",
-    "subtitle": "Clinical Decision Support System",
-    "description": "AI-powered clinical decision support that assists physicians with evidence-based recommendations, differential diagnosis, and treatment guidance at the point of care.",
-    "company": "EkaCare",
-    "topic": "Healthcare AI",
-    "category": "application",
-    "url": "",
-    "tags": ["LLM", "Clinical"],
-    "links": []
-  },
-  {
-    "id": "riyaz",
-    "title": "Riyaz",
-    "subtitle": "AI music practice app",
-    "description": "AI-powered practice app for Indian classical music providing real-time feedback on pitch accuracy, tala adherence, and raga grammar. Co-founded MusicMuni Labs to build and commercialize this. 1M+ installs.",
-    "company": "MusicMuni Labs",
-    "topic": "Music AI",
-    "category": "project",
-    "url": "",
-    "tags": ["MIR", "Mobile", "Raga", "ASR"],
-    "links": []
-  },
-  {
-    "id": "dunya",
-    "title": "Dunya",
-    "subtitle": "CompMusic music corpus explorer",
-    "description": "Web platform for exploring and analyzing the CompMusic music corpora — large collections of annotated audio recordings across Hindustani, Carnatic, Makam, Beijing opera, and Andalusian musical traditions. Built at MTG, UPF.",
-    "company": "MTG, UPF",
-    "topic": "Music AI",
-    "category": "project",
-    "url": "",
-    "tags": ["MIR", "Web", "Datasets"],
-    "links": []
   },
   {
     "id": "saraga",
@@ -91,21 +72,23 @@
     "company": "MTG, UPF",
     "topic": "Music AI",
     "category": "project",
+    "year": 2021,
     "url": "",
     "tags": ["MIR", "Datasets", "Raga"],
     "links": [{ "label": "Paper", "url": "https://scholar.google.com/citations?user=rJSKxAMAAAAJ&hl=en" }]
   },
   {
-    "id": "compmusic",
-    "title": "CompMusic",
-    "subtitle": "ERC research project on world music MIR",
-    "description": "European Research Council funded project at MTG, UPF for computational analysis of non-Western music traditions. Contributed tonic identification, raga recognition, melodic similarity, and corpus tools for Hindustani and Carnatic music.",
-    "company": "MTG, UPF",
+    "id": "riyaz",
+    "title": "Riyaz",
+    "subtitle": "AI music practice app",
+    "description": "AI-powered practice app for Indian classical music providing real-time feedback on pitch accuracy, tala adherence, and raga grammar. Co-founded MusicMuni Labs to build and commercialize this. 1M+ installs.",
+    "company": "MusicMuni Labs",
     "topic": "Music AI",
     "category": "project",
-    "url": "https://compmusic.upf.edu",
-    "tags": ["MIR", "Raga", "Datasets"],
-    "links": [{ "label": "Project", "url": "https://compmusic.upf.edu" }]
+    "year": 2017,
+    "url": "",
+    "tags": ["MIR", "Mobile", "Raga", "ASR"],
+    "links": []
   },
   {
     "id": "phd-research",
@@ -115,6 +98,7 @@
     "company": "MTG, UPF",
     "topic": "Music AI",
     "category": "project",
+    "year": 2016,
     "url": "https://compmusic.upf.edu/phd-thesis-sankalp",
     "tags": ["MIR", "Raga", "Signal Processing"],
     "links": [
@@ -125,6 +109,32 @@
     ]
   },
   {
+    "id": "compmusic",
+    "title": "CompMusic",
+    "subtitle": "ERC research project on world music MIR",
+    "description": "European Research Council funded project at MTG, UPF for computational analysis of non-Western music traditions. Contributed tonic identification, raga recognition, melodic similarity, and corpus tools for Hindustani and Carnatic music.",
+    "company": "MTG, UPF",
+    "topic": "Music AI",
+    "category": "project",
+    "year": 2016,
+    "url": "https://compmusic.upf.edu",
+    "tags": ["MIR", "Raga", "Datasets"],
+    "links": [{ "label": "Project", "url": "https://compmusic.upf.edu" }]
+  },
+  {
+    "id": "dunya",
+    "title": "Dunya",
+    "subtitle": "CompMusic music corpus explorer",
+    "description": "Web platform for exploring and analyzing the CompMusic music corpora — large collections of annotated audio recordings across Hindustani, Carnatic, Makam, Beijing opera, and Andalusian musical traditions. Built at MTG, UPF.",
+    "company": "MTG, UPF",
+    "topic": "Music AI",
+    "category": "project",
+    "year": 2015,
+    "url": "",
+    "tags": ["MIR", "Web", "Datasets"],
+    "links": []
+  },
+  {
     "id": "ragawise",
     "title": "Ragawise",
     "subtitle": "Raga recognition & visualization",
@@ -133,22 +143,10 @@
     "topic": "Music AI",
     "category": "hack",
     "award": "Best Code — HAMR 2015",
+    "year": 2015,
     "url": "https://github.com/sankalpg/Ragawise",
     "tags": ["MIR", "Python", "Raga"],
     "links": [{ "label": "GitHub", "url": "https://github.com/sankalpg/Ragawise" }]
-  },
-  {
-    "id": "hindify",
-    "title": "Hindify",
-    "subtitle": "Hindustani style transfer",
-    "description": "Transforms Western pop songs into Hindustani classical style by applying raga-based melodic transformations — converting Western scales to raga scales and adding characteristic ornaments. Built at EchoNest Hack Day 2013.",
-    "company": "EchoNest 2013",
-    "topic": "Music AI",
-    "category": "hack",
-    "award": "Best Hack — EchoNest 2013",
-    "url": "https://github.com/sankalpg/hindustanify",
-    "tags": ["MIR", "Python", "Raga", "Signal Processing"],
-    "links": [{ "label": "GitHub", "url": "https://github.com/sankalpg/hindustanify" }]
   },
   {
     "id": "sawaal-jawaab",
@@ -158,6 +156,7 @@
     "company": "HAMR 2015",
     "topic": "Music AI",
     "category": "hack",
+    "year": 2015,
     "url": "",
     "tags": ["MIR", "Interactive", "Raga"],
     "links": []
@@ -170,6 +169,7 @@
     "company": "Personal",
     "topic": "Music AI",
     "category": "hack",
+    "year": 2015,
     "url": "https://github.com/sankalpg/Hodorizor",
     "tags": ["Signal Processing", "Voice"],
     "links": [{ "label": "GitHub", "url": "https://github.com/sankalpg/Hodorizor" }]
@@ -182,6 +182,7 @@
     "company": "Personal",
     "topic": "Music AI",
     "category": "hack",
+    "year": 2015,
     "url": "https://github.com/sankalpg/Infinite_Jukebox_Essentia",
     "tags": ["MIR", "Python", "Audio"],
     "links": [{ "label": "GitHub", "url": "https://github.com/sankalpg/Infinite_Jukebox_Essentia" }]
@@ -194,8 +195,23 @@
     "company": "Personal",
     "topic": "Music AI",
     "category": "hack",
+    "year": 2014,
     "url": "",
     "tags": ["Signal Processing", "JavaScript", "Audio"],
     "links": []
+  },
+  {
+    "id": "hindify",
+    "title": "Hindify",
+    "subtitle": "Hindustani style transfer",
+    "description": "Transforms Western pop songs into Hindustani classical style by applying raga-based melodic transformations — converting Western scales to raga scales and adding characteristic ornaments. Built at EchoNest Hack Day 2013.",
+    "company": "EchoNest 2013",
+    "topic": "Music AI",
+    "category": "hack",
+    "award": "Best Hack — EchoNest 2013",
+    "year": 2013,
+    "url": "https://github.com/sankalpg/hindustanify",
+    "tags": ["MIR", "Python", "Raga", "Signal Processing"],
+    "links": [{ "label": "GitHub", "url": "https://github.com/sankalpg/hindustanify" }]
   }
 ]

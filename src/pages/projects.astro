@@ -9,6 +9,9 @@ const categoryLabel: Record<string, string> = {
   project: 'Project',
   hack: 'Hack',
 };
+
+// Sort by year descending
+const sorted = [...allProjects].sort((a, b) => b.year - a.year);
 ---
 
 <BaseLayout title="Projects — Sankalp Gulati">
@@ -36,7 +39,7 @@ const categoryLabel: Record<string, string> = {
     </div>
 
     <div class="projects-grid" id="projectsGrid">
-      {allProjects.map(p => (
+      {sorted.map(p => (
         <div
           class="project-card"
           data-topic={p.topic}
@@ -54,6 +57,7 @@ const categoryLabel: Record<string, string> = {
           <p class="card-desc">{p.description}</p>
           <div class="card-foot">
             <div class="card-meta">
+              <span class="meta-year">{p.year}</span>
               <span class="meta-company">{p.company}</span>
               <span class:list={['meta-topic', `topic-${p.topic.toLowerCase().replace(/\s+/g, '-').replace('alternate-data', 'alt')}`]}>{p.topic}</span>
               <span class="meta-cat">{categoryLabel[p.category]}</span>
@@ -184,6 +188,12 @@ const categoryLabel: Record<string, string> = {
   .card-desc { font-size: 13px; line-height: 1.6; color: #4b5563; margin: 0; flex: 1; }
   .card-foot { display: flex; flex-direction: column; gap: 8px; }
   .card-meta { display: flex; flex-wrap: wrap; gap: 5px; }
+  .meta-year {
+    font-size: 10px; font-weight: 700; color: #9ca3af;
+    padding: 2px 7px; border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    font-variant-numeric: tabular-nums;
+  }
   .meta-company {
     font-size: 10px; font-weight: 700; letter-spacing: 0.5px;
     text-transform: uppercase; color: #6b7280;

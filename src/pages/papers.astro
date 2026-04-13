@@ -9,12 +9,8 @@ type EntryType = 'blog' | 'paper' | 'thesis';
 const topics = ['Healthcare AI', 'Music AI', 'Alternate Data'] as const;
 const typeLabels: Record<string, string> = { blog: 'Blog', paper: 'Paper', thesis: 'Thesis' };
 
-// Sort: theses first among music, then by year desc
-const sorted = [...allPapers].sort((a, b) => {
-  if (a.type === 'thesis' && b.type !== 'thesis') return -1;
-  if (b.type === 'thesis' && a.type !== 'thesis') return 1;
-  return (b.year ?? 0) - (a.year ?? 0);
-});
+// Sort purely by year descending (most recent first)
+const sorted = [...allPapers].sort((a, b) => (b.year ?? 0) - (a.year ?? 0));
 
 const scholarUrl = 'https://scholar.google.com/citations?user=rJSKxAMAAAAJ&hl=en';
 ---
