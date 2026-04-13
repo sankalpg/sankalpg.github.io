@@ -6,22 +6,11 @@
     "company": "EkaCare",
     "title": "Parrotlet-A 2 Pro: The Most Performant Speech Recognition Model for Indian Healthcare",
     "description": "Releasing the gold standard for medical speech recognition in Indian healthcare.",
-    "year": 2024,
+    "date": "2026-02-12",
+    "year": 2026,
     "url": "https://info.eka.care/services/releasing-parrotlet-a-v2-the-gold-standard-for-medical-speech-recognition-in-indian-healthcare",
     "urlStatus": "ok",
     "tags": ["ASR", "LLM", "Evaluation"]
-  },
-  {
-    "id": "karma",
-    "type": "blog",
-    "topic": "Healthcare AI",
-    "company": "EkaCare",
-    "title": "Introducing KARMA – OpenMedEvalKit",
-    "description": "An open-source framework for evaluating medical AI systems.",
-    "year": 2024,
-    "url": "https://info.eka.care/services/introducing-karma-openmedevalkit-an-open-source-framework-for-medical-ai-evaluation",
-    "urlStatus": "ok",
-    "tags": ["Evaluation", "LLM"]
   },
   {
     "id": "parrotlet-e",
@@ -30,10 +19,24 @@
     "company": "EkaCare",
     "title": "Parrotlet-E & Eka IndicMTEB",
     "description": "Bridging India's multilingual healthcare gap with multilingual embeddings and benchmarks.",
-    "year": 2024,
+    "date": "2025-11-12",
+    "year": 2025,
     "url": "https://info.eka.care/services/introducing-parrotlet-e-and-eka-indicmteb-bridging-indias-multilingual-healthcare-gap",
     "urlStatus": "ok",
     "tags": ["NLP", "Multilingual", "Evaluation"]
+  },
+  {
+    "id": "karma",
+    "type": "blog",
+    "topic": "Healthcare AI",
+    "company": "EkaCare",
+    "title": "Introducing KARMA – OpenMedEvalKit",
+    "description": "An open-source framework for evaluating medical AI systems.",
+    "date": "2025-07-24",
+    "year": 2025,
+    "url": "https://info.eka.care/services/introducing-karma-openmedevalkit-an-open-source-framework-for-medical-ai-evaluation",
+    "urlStatus": "ok",
+    "tags": ["Evaluation", "LLM"]
   },
   {
     "id": "semantic-wer",
@@ -42,7 +45,8 @@
     "company": "EkaCare",
     "title": "Beyond Traditional WER: Semantic WER for ASR",
     "description": "New evaluation metrics for speech recognition in healthcare contexts.",
-    "year": 2024,
+    "date": "2025-07-24",
+    "year": 2025,
     "url": "https://info.eka.care/services/beyond-traditional-wer-the-critical-need-for-semantic-wer-in-asr-for-indian-healthcare",
     "urlStatus": "ok",
     "tags": ["ASR", "Evaluation"]
@@ -54,7 +58,8 @@
     "company": "EkaCare",
     "title": "Parrotlet-V Lite (4B) – Vision LLM for Medical Records",
     "description": "Purpose-built vision LLM for parsing and extracting data from medical documents.",
-    "year": 2023,
+    "date": "2025-07-24",
+    "year": 2025,
     "url": "https://info.eka.care/services/parrotlet-v-lite-4b-releasing-our-purpose-built-vision-llm-for-parsing-medical-records",
     "urlStatus": "ok",
     "tags": ["Vision", "LLM"]
@@ -66,7 +71,8 @@
     "company": "EkaCare",
     "title": "Parrotlet-A EN (5B) – English Medical ASR LLM",
     "description": "Purpose-built LLM for English ASR in Indian healthcare settings.",
-    "year": 2023,
+    "date": "2025-07-24",
+    "year": 2025,
     "url": "https://info.eka.care/services/parrotlet-a-en-5b-releasing-our-purpose-built-llm-for-english-asr-in-indian-healthcare",
     "urlStatus": "ok",
     "tags": ["ASR", "LLM"]
@@ -78,7 +84,8 @@
     "company": "EkaCare",
     "title": "Advancing Healthcare AI Evaluation in India",
     "description": "EkaCare releases four evaluation datasets for medical AI systems.",
-    "year": 2023,
+    "date": "2025-07-24",
+    "year": 2025,
     "url": "https://info.eka.care/services/advancing-healthcare-ai-evaluation-in-india-ekacare-releases-four-evaluation-datasets",
     "urlStatus": "ok",
     "tags": ["Evaluation", "Datasets"]
@@ -90,7 +97,8 @@
     "company": "EkaCare",
     "title": "Lab-Ready and Prescription-Perfect: Eka's Small LLMs vs. Industry Giants",
     "description": "Comparative analysis of specialized small models versus general-purpose AI for healthcare tasks.",
-    "year": 2023,
+    "date": "2024-11-26",
+    "year": 2024,
     "url": "https://info.eka.care/services/lab-ready-and-prescription-perfect-ekas-small-llms-vs-industry-giants",
     "urlStatus": "ok",
     "tags": ["LLM", "Evaluation", "Clinical"]
@@ -102,7 +110,8 @@
     "company": "EkaCare",
     "title": "Extracting Structured Information from Lab Reports",
     "description": "Challenges and learnings from extracting structured data from medical lab reports.",
-    "year": 2022,
+    "date": "2023-07-21",
+    "year": 2023,
     "url": "https://info.eka.care/services/eka-smart-report",
     "urlStatus": "ok",
     "tags": ["Vision", "NLP", "Clinical"]
@@ -114,7 +123,8 @@
     "company": "EkaCare",
     "title": "Leveraging Semantic Technologies in Healthcare",
     "description": "Ontology applications in medical contexts for knowledge representation.",
-    "year": 2022,
+    "date": "2023-07-21",
+    "year": 2023,
     "url": "https://info.eka.care/services/leveraging-ontologies-in-health-care",
     "urlStatus": "ok",
     "tags": ["NLP", "Clinical"]
@@ -132,6 +142,31 @@
     "tags": ["Datasets", "Clinical"]
   },
   {
+    "id": "emr2021-saraga",
+    "type": "paper",
+    "topic": "Music AI",
+    "company": "MTG, UPF",
+    "title": "Saraga: Open Datasets for Research on Indian Art Music",
+    "year": 2021,
+    "venue": "Empirical Musicology Review",
+    "url": "https://scholar.google.com/citations?user=rJSKxAMAAAAJ&hl=en",
+    "urlStatus": "possibly_blocked",
+    "tags": ["MIR", "Datasets"],
+    "extraLinks": []
+  },
+  {
+    "id": "nyc-noise",
+    "type": "blog",
+    "topic": "Alternate Data",
+    "company": "Synaptic",
+    "title": "Post-Pandemic Normalcy: NYC Noise Complaints",
+    "description": "Time series analysis of NYC 311 noise complaint data to measure urban activity recovery post-COVID.",
+    "year": 2021,
+    "url": "https://medium.com/synaptic-blog/post-pandemic-normalcy-nyc-noise-complaints-a1b2c3d4e5f6",
+    "urlStatus": "dead",
+    "tags": ["Time Series", "Urban Data"]
+  },
+  {
     "id": "glassdoor-reviews",
     "type": "blog",
     "topic": "Alternate Data",
@@ -140,7 +175,7 @@
     "description": "NLP pipeline to classify and extract signal from Glassdoor employee reviews — identifying sentiment, topics, and leading indicators of company health.",
     "year": 2020,
     "url": "https://medium.com/synaptic-blog/classifying-glassdoor-reviews-c1e6c2bcf5f4",
-    "urlStatus": "ok",
+    "urlStatus": "dead",
     "tags": ["NLP", "Text Classification"]
   },
   {
@@ -152,20 +187,8 @@
     "description": "Graph ML approach to mapping competitive dynamics among private companies using web and textual signals.",
     "year": 2020,
     "url": "https://medium.com/synaptic-blog/competitive-relationships-across-private-companies-e88a765ee1c4",
-    "urlStatus": "ok",
+    "urlStatus": "dead",
     "tags": ["Graph ML", "NLP"]
-  },
-  {
-    "id": "nyc-noise",
-    "type": "blog",
-    "topic": "Alternate Data",
-    "company": "Synaptic",
-    "title": "Post-Pandemic Normalcy: NYC Noise Complaints",
-    "description": "Time series analysis of NYC 311 noise complaint data to measure urban activity recovery post-COVID.",
-    "year": 2021,
-    "url": "https://medium.com/synaptic-blog/post-pandemic-normalcy-nyc-noise-complaints-a1b2c3d4e5f6",
-    "urlStatus": "ok",
-    "tags": ["Time Series", "Urban Data"]
   },
   {
     "id": "electricity-demand",
@@ -176,7 +199,7 @@
     "description": "Real-time tracking and forecasting of US electricity demand as an alternate economic indicator.",
     "year": 2020,
     "url": "https://medium.com/synaptic-blog/tracking-us-electricity-demand-f1a2b3c4d5e6",
-    "urlStatus": "ok",
+    "urlStatus": "dead",
     "tags": ["Time Series", "Energy"]
   },
   {
@@ -196,33 +219,6 @@
       { "label": "Datasets", "url": "https://github.com/sankalpg/MelodicAnalysisDatasets" },
       { "label": "Defense Video", "url": "https://www.youtube.com/watch?v=xdJz-AVhPZk" }
     ]
-  },
-  {
-    "id": "msc-2012",
-    "type": "thesis",
-    "topic": "Music AI",
-    "company": "MTG, UPF",
-    "title": "A Tonic Identification Approach for Indian Art Music",
-    "description": "Master's thesis on automated tonic identification for Indian classical music using signal processing and machine learning.",
-    "year": 2012,
-    "venue": "Master's Dissertation · Music Technology Group, UPF",
-    "url": "https://scholar.google.com/citations?user=rJSKxAMAAAAJ&hl=en",
-    "urlStatus": "possibly_blocked",
-    "tags": ["MIR", "Signal Processing"],
-    "extraLinks": []
-  },
-  {
-    "id": "emr2021-saraga",
-    "type": "paper",
-    "topic": "Music AI",
-    "company": "MTG, UPF",
-    "title": "Saraga: Open Datasets for Research on Indian Art Music",
-    "year": 2021,
-    "venue": "Empirical Musicology Review",
-    "url": "https://scholar.google.com/citations?user=rJSKxAMAAAAJ&hl=en",
-    "urlStatus": "possibly_blocked",
-    "tags": ["MIR", "Datasets"],
-    "extraLinks": []
   },
   {
     "id": "ismir2016-raga",
@@ -394,6 +390,20 @@
     "extraLinks": []
   },
   {
+    "id": "msc-2012",
+    "type": "thesis",
+    "topic": "Music AI",
+    "company": "MTG, UPF",
+    "title": "A Tonic Identification Approach for Indian Art Music",
+    "description": "Master's thesis on automated tonic identification for Indian classical music using signal processing and machine learning.",
+    "year": 2012,
+    "venue": "Master's Dissertation · Music Technology Group, UPF",
+    "url": "https://scholar.google.com/citations?user=rJSKxAMAAAAJ&hl=en",
+    "urlStatus": "possibly_blocked",
+    "tags": ["MIR", "Signal Processing"],
+    "extraLinks": []
+  },
+  {
     "id": "jnmr2012-raga",
     "type": "paper",
     "topic": "Music AI",
@@ -459,19 +469,6 @@
     "extraLinks": []
   },
   {
-    "id": "iitm2010-rhythm",
-    "type": "paper",
-    "topic": "Music AI",
-    "company": "IIT Bombay",
-    "title": "Rhythm Pattern Representations for Tempo Detection in Music",
-    "year": 2010,
-    "venue": "IITM",
-    "url": "https://scholar.google.com/citations?user=rJSKxAMAAAAJ&hl=en",
-    "urlStatus": "possibly_blocked",
-    "tags": ["MIR", "Signal Processing"],
-    "extraLinks": []
-  },
-  {
     "id": "smc2011-survey",
     "type": "paper",
     "topic": "Music AI",
@@ -492,6 +489,19 @@
     "title": "Automatic Genre Classification of North Indian Devotional Music",
     "year": 2011,
     "venue": "NCC",
+    "url": "https://scholar.google.com/citations?user=rJSKxAMAAAAJ&hl=en",
+    "urlStatus": "possibly_blocked",
+    "tags": ["MIR", "Signal Processing"],
+    "extraLinks": []
+  },
+  {
+    "id": "iitm2010-rhythm",
+    "type": "paper",
+    "topic": "Music AI",
+    "company": "IIT Bombay",
+    "title": "Rhythm Pattern Representations for Tempo Detection in Music",
+    "year": 2010,
+    "venue": "IITM",
     "url": "https://scholar.google.com/citations?user=rJSKxAMAAAAJ&hl=en",
     "urlStatus": "possibly_blocked",
     "tags": ["MIR", "Signal Processing"],

@@ -1,6 +1,7 @@
 ---
 interface Props {
   title: string;
+  date?: string;
   year?: number;
   venue?: string;
   url: string;
@@ -13,7 +14,12 @@ interface Props {
   company?: string;
   topic?: string;
 }
-const { title, year, venue, url, urlStatus, attribution, description, extraLinks = [], tags = [], company, topic } = Astro.props;
+const { title, date, year, venue, url, urlStatus, attribution, description, extraLinks = [], tags = [], company, topic } = Astro.props;
+
+// Format date: "2026-02-12" → "12 Feb 2026", fall back to year only
+const displayDate = date
+  ? new Date(date + 'T00:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })
+  : year ? String(year) : null;
 const hasDirectLink = urlStatus === 'ok' && url;
 const hasScholarFallback = urlStatus === 'possibly_blocked' && url;
 ---
@@ -24,10 +30,10 @@ const hasScholarFallback = urlStatus === 'possibly_blocked' && url;
       ? <a href={url} target="_blank" rel="noopener" class="entry__title">{title}</a>
       : <span class:list={['entry__title', { 'entry__title--dead': urlStatus === 'dead' }]}>{title}</span>
     }
-    {(venue || year) && (
+    {(venue || displayDate) && (
       <span class="entry__meta">
         {venue && <span class="entry__venue">{venue}</span>}
-        {year && <span class="entry__year">{year}</span>}
+        {displayDate && <span class="entry__year">{displayDate}</span>}
       </span>
     )}
     {description && <p class="entry__desc">{description}</p>}

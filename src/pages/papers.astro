@@ -9,8 +9,10 @@ type EntryType = 'blog' | 'paper' | 'thesis';
 const topics = ['Healthcare AI', 'Music AI', 'Alternate Data'] as const;
 const typeLabels: Record<string, string> = { blog: 'Blog', paper: 'Paper', thesis: 'Thesis' };
 
-// Sort purely by year descending (most recent first)
-const sorted = [...allPapers].sort((a, b) => (b.year ?? 0) - (a.year ?? 0));
+// Sort by date descending — use full ISO date when available, else fall back to year
+const sortKey = (e: { date?: string; year?: number }) =>
+  'date' in e && e.date ? e.date : `${e.year ?? 0}-01-01`;
+const sorted = [...allPapers].sort((a, b) => sortKey(b).localeCompare(sortKey(a)));
 
 const scholarUrl = 'https://scholar.google.com/citations?user=rJSKxAMAAAAJ&hl=en';
 ---
@@ -49,6 +51,7 @@ const scholarUrl = 'https://scholar.google.com/citations?user=rJSKxAMAAAAJ&hl=en
         <div class="filterable-entry" data-topic={entry.topic} data-type={entry.type}>
           <ResearchEntryRow
             title={entry.title}
+            date={'date' in entry ? (entry.date as string) : undefined}
             year={entry.year}
             venue={'venue' in entry ? (entry.venue as string) : undefined}
             url={entry.url}
