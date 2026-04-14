@@ -154,6 +154,21 @@
     ]
   },
   {
+    "id": "medscribe-alliance",
+    "title": "MedScribeAlliance",
+    "subtitle": "Open standard for Scribe-to-EMR interoperability",
+    "description": "Leading an industry initiative to build a digital public good for seamless AI scribe integration with EMR systems across Indian healthcare. Defines an open, vendor-agnostic protocol covering handshake, FHIR-compliant data exchange, and translation adapters — so any scribe vendor can plug into any EMR without proprietary lock-in.",
+    "company": "MedScribeAlliance",
+    "topic": "Healthcare AI",
+    "category": "open-source",
+    "year": 2024,
+    "url": "https://github.com/MedScribeAlliance",
+    "tags": ["FHIR", "Clinical", "Interoperability", "Standards"],
+    "links": [
+      { "label": "GitHub", "url": "https://github.com/MedScribeAlliance" }
+    ]
+  },
+  {
     "id": "bodhi",
     "title": "BODHI",
     "subtitle": "Open clinical knowledge graphs for Indian healthcare AI",
