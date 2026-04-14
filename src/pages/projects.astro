@@ -3,9 +3,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import allProjects from '../content/all-projects.json';
 
 const topics = ['Healthcare AI', 'Music AI'];
-const categories = ['application', 'project', 'hack'] as const;
+const categories = ['application', 'open-source', 'project', 'hack'] as const;
 const categoryLabel: Record<string, string> = {
   application: 'Application',
+  'open-source': 'Open Source',
   project: 'Project',
   hack: 'Hack',
 };
@@ -18,7 +19,7 @@ const sorted = [...allProjects].sort((a, b) => b.year - a.year);
   <div class="container section">
     <div class="page-header">
       <h1 class="page-title">Applications &amp; Projects</h1>
-      <p class="page-subtitle">Work across Healthcare AI and Music AI — products, research projects, and hackathon builds.</p>
+      <p class="page-subtitle">Work across Healthcare AI and Music AI — products, open-source libraries, research projects, and hackathon builds.</p>
     </div>
 
     <div class="filter-bar">

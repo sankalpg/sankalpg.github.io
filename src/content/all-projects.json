@@ -135,6 +135,68 @@
     "links": []
   },
   {
+    "id": "karma",
+    "title": "KARMA / OpenMedEvalKit",
+    "subtitle": "Open-source medical AI evaluation framework",
+    "description": "An open-source framework for evaluating medical AI systems in Indian clinical contexts. Includes four domain-specific evaluation datasets covering ASR, document understanding, clinical NLP, and multilingual tasks. Built because most medical AI benchmarks don't reflect real Indian conditions.",
+    "company": "EkaCare",
+    "topic": "Healthcare AI",
+    "category": "open-source",
+    "year": 2025,
+    "url": "https://info.eka.care/services/introducing-karma-openmedevalkit-an-open-source-framework-for-medical-ai-evaluation",
+    "tags": ["Evaluation", "LLM", "Datasets", "Clinical"],
+    "links": [
+      { "label": "Blog", "url": "https://info.eka.care/services/introducing-karma-openmedevalkit-an-open-source-framework-for-medical-ai-evaluation" }
+    ]
+  },
+  {
+    "id": "indicmteb",
+    "title": "Eka IndicMTEB",
+    "subtitle": "Multilingual medical NLP benchmark for India",
+    "description": "A comprehensive benchmark for evaluating multilingual medical text embeddings across 22 Indian languages. Built to fill the gap in Indian healthcare NLP evaluation — MTEB and similar benchmarks are English-first and clinically naive.",
+    "company": "EkaCare",
+    "topic": "Healthcare AI",
+    "category": "open-source",
+    "year": 2025,
+    "url": "https://info.eka.care/services/introducing-parrotlet-e-and-eka-indicmteb-bridging-indias-multilingual-healthcare-gap",
+    "tags": ["NLP", "Multilingual", "Evaluation", "Datasets"],
+    "links": [
+      { "label": "Blog", "url": "https://info.eka.care/services/introducing-parrotlet-e-and-eka-indicmteb-bridging-indias-multilingual-healthcare-gap" }
+    ]
+  },
+  {
+    "id": "essentia",
+    "title": "Essentia",
+    "subtitle": "Open-source audio analysis library",
+    "description": "Contributed to Essentia during my PhD at MTG, UPF — an open-source C++/Python library for audio and music analysis. Now a standard tool in music information retrieval research, used widely across academia and industry.",
+    "company": "MTG, UPF",
+    "topic": "Music AI",
+    "category": "open-source",
+    "year": 2013,
+    "url": "https://github.com/MTG/essentia",
+    "tags": ["MIR", "Audio", "Signal Processing", "Python"],
+    "links": [
+      { "label": "GitHub", "url": "https://github.com/MTG/essentia" },
+      { "label": "Paper", "url": "http://hdl.handle.net/10230/32252" }
+    ]
+  },
+  {
+    "id": "melodic-datasets",
+    "title": "Melodic Analysis Datasets",
+    "subtitle": "Annotated corpora for Indian classical music research",
+    "description": "Open datasets released alongside my PhD thesis — annotated melodic data for Hindustani and Carnatic music, including tonic labels, raga annotations, and melodic similarity judgments. Widely used in subsequent MIR research on Indian art music.",
+    "company": "MTG, UPF",
+    "topic": "Music AI",
+    "category": "open-source",
+    "year": 2016,
+    "url": "https://github.com/sankalpg/MelodicAnalysisDatasets",
+    "tags": ["MIR", "Datasets", "Raga"],
+    "links": [
+      { "label": "GitHub", "url": "https://github.com/sankalpg/MelodicAnalysisDatasets" },
+      { "label": "Thesis", "url": "https://www.tdx.cat/handle/10803/398984" }
+    ]
+  },
+  {
     "id": "ragawise",
     "title": "Ragawise",
     "subtitle": "Raga recognition & visualization",
