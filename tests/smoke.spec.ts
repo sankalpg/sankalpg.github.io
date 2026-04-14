@@ -25,7 +25,7 @@ test('projects page shows apps and hacks with filters', async ({ page }) => {
   await page.goto('/projects');
   await expect(page.getByText('EkaScribe')).toBeVisible();
   await expect(page.getByText('Ragawise')).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'CompMusic' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'CompMusic', exact: true })).toBeVisible();
   await page.getByRole('button', { name: 'Music AI' }).click();
   await expect(page.getByText('EkaScribe')).not.toBeVisible();
   await expect(page.getByText('Ragawise')).toBeVisible();

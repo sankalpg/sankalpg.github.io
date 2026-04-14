@@ -71,11 +71,14 @@
     "description": "Large-scale open dataset for research on Carnatic and Hindustani music, featuring multitrack audio, melodic annotations, and metadata. Published in Empirical Musicology Review 2021.",
     "company": "MTG, UPF",
     "topic": "Music AI",
-    "category": "project",
+    "category": "open-source",
     "year": 2021,
-    "url": "",
+    "url": "https://mtg.github.io/saraga/",
     "tags": ["MIR", "Datasets", "Raga"],
-    "links": [{ "label": "Paper", "url": "https://scholar.google.com/citations?user=rJSKxAMAAAAJ&hl=en" }]
+    "links": [
+      { "label": "Website", "url": "https://mtg.github.io/saraga/" },
+      { "label": "Paper", "url": "https://scholar.google.com/citations?user=rJSKxAMAAAAJ&hl=en" }
+    ]
   },
   {
     "id": "riyaz",
@@ -146,7 +149,53 @@
     "url": "https://info.eka.care/services/introducing-karma-openmedevalkit-an-open-source-framework-for-medical-ai-evaluation",
     "tags": ["Evaluation", "LLM", "Datasets", "Clinical"],
     "links": [
+      { "label": "GitHub", "url": "https://github.com/eka-care/karMA-OpenMedEvalKit" },
       { "label": "Blog", "url": "https://info.eka.care/services/introducing-karma-openmedevalkit-an-open-source-framework-for-medical-ai-evaluation" }
+    ]
+  },
+  {
+    "id": "bodhi",
+    "title": "BODHI",
+    "subtitle": "Open clinical knowledge graphs for Indian healthcare AI",
+    "description": "Bharat Ontology for Disease & Healthcare Informatics — open-source clinical knowledge graphs for grounding healthcare AI in verified clinical data. Covers 779 conditions, 4,037 symptom variants, 1,186 drugs, 812 lab tests, and 39 specialties. SNOMED-linked, production-tested. Available in Neo4j, CSV, PyTorch Geometric, and RDF formats.",
+    "company": "EkaCare",
+    "topic": "Healthcare AI",
+    "category": "open-source",
+    "year": 2024,
+    "url": "https://github.com/eka-care/BODHI",
+    "tags": ["Knowledge Graph", "Clinical", "NLP", "Datasets"],
+    "links": [
+      { "label": "GitHub", "url": "https://github.com/eka-care/BODHI" }
+    ]
+  },
+  {
+    "id": "eka-hf-models",
+    "title": "EkaCare Public Models",
+    "subtitle": "Parrotlet family on HuggingFace",
+    "description": "Open-source release of EkaCare's Parrotlet model family on HuggingFace — medical ASR (Parrotlet-A), vision LLMs for medical documents (Parrotlet-V), and multilingual medical embeddings (Parrotlet-E). Purpose-built for Indian healthcare, available for research and clinical use.",
+    "company": "EkaCare",
+    "topic": "Healthcare AI",
+    "category": "open-source",
+    "year": 2025,
+    "url": "https://huggingface.co/collections/ekacare/ekacare-public-healthcare-llms",
+    "tags": ["ASR", "LLM", "Vision", "NLP", "Multilingual"],
+    "links": [
+      { "label": "HuggingFace", "url": "https://huggingface.co/collections/ekacare/ekacare-public-healthcare-llms" }
+    ]
+  },
+  {
+    "id": "eka-hf-datasets",
+    "title": "EkaCare Medical Datasets",
+    "subtitle": "Public clinical datasets on HuggingFace",
+    "description": "Open evaluation datasets for medical AI in Indian healthcare contexts — covering ASR benchmarks, document understanding, multilingual clinical NLP, and structured extraction tasks. Released alongside KARMA and IndicMTEB to enable reproducible research.",
+    "company": "EkaCare",
+    "topic": "Healthcare AI",
+    "category": "open-source",
+    "year": 2025,
+    "url": "https://huggingface.co/collections/ekacare/ekacare-medical-public-datasets",
+    "tags": ["Datasets", "Evaluation", "Multilingual", "Clinical"],
+    "links": [
+      { "label": "HuggingFace", "url": "https://huggingface.co/collections/ekacare/ekacare-medical-public-datasets" }
     ]
   },
   {
@@ -178,6 +227,36 @@
     "links": [
       { "label": "GitHub", "url": "https://github.com/MTG/essentia" },
       { "label": "Paper", "url": "http://hdl.handle.net/10230/32252" }
+    ]
+  },
+  {
+    "id": "pycompmusic",
+    "title": "pycompmusic",
+    "subtitle": "Python tools for computational musicology",
+    "description": "Python library developed as part of the CompMusic project at MTG, UPF — tools for accessing and processing the CompMusic music corpora, including audio feature extraction, metadata handling, and integration with the Dunya platform.",
+    "company": "MTG, UPF",
+    "topic": "Music AI",
+    "category": "open-source",
+    "year": 2014,
+    "url": "https://github.com/MTG/pycompmusic",
+    "tags": ["MIR", "Python", "Datasets"],
+    "links": [
+      { "label": "GitHub", "url": "https://github.com/MTG/pycompmusic" }
+    ]
+  },
+  {
+    "id": "sms-tools",
+    "title": "sms-tools",
+    "subtitle": "Spectral modeling synthesis tools",
+    "description": "Open-source software for sound analysis, transformation, and synthesis using spectral modeling. Contributed as part of the ASPMA Coursera MOOC at MTG, UPF — the course taught signal processing fundamentals to 100K+ students worldwide.",
+    "company": "MTG, UPF",
+    "topic": "Music AI",
+    "category": "open-source",
+    "year": 2014,
+    "url": "https://github.com/MTG/sms-tools",
+    "tags": ["Signal Processing", "Python", "Audio"],
+    "links": [
+      { "label": "GitHub", "url": "https://github.com/MTG/sms-tools" }
     ]
   },
   {
