@@ -7,7 +7,7 @@
     "company": "EkaCare",
     "topic": "Healthcare AI",
     "category": "application",
-    "year": 2024,
+    "year": 2026,
     "url": "",
     "tags": ["LLM", "Clinical"],
     "links": []
@@ -20,7 +20,7 @@
     "company": "EkaCare",
     "topic": "Healthcare AI",
     "category": "application",
-    "year": 2023,
+    "year": 2026,
     "url": "https://ekascribe.ai/",
     "tags": ["ASR", "LLM", "Clinical"],
     "links": [{ "label": "Website", "url": "https://ekascribe.ai/" }]
@@ -46,7 +46,7 @@
     "company": "EkaCare",
     "topic": "Healthcare AI",
     "category": "application",
-    "year": 2022,
+    "year": 2026,
     "url": "https://developer.eka.care/eka-medai/technologies/overview",
     "tags": ["Vision", "NLP", "Clinical"],
     "links": [{ "label": "Docs", "url": "https://developer.eka.care/eka-medai/technologies/overview" }]
