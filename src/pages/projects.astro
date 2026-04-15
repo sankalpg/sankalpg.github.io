@@ -11,8 +11,13 @@ const categoryLabel: Record<string, string> = {
   hack: 'Hack',
 };
 
-// Sort by year descending
-const sorted = [...allProjects].sort((a, b) => b.year - a.year);
+// Sort: pinned first, then by year descending
+const sorted = [...allProjects].sort((a, b) => {
+  const aPinned = 'pinned' in a && a.pinned ? 1 : 0;
+  const bPinned = 'pinned' in b && b.pinned ? 1 : 0;
+  if (aPinned !== bPinned) return bPinned - aPinned;
+  return b.year - a.year;
+});
 ---
 
 <BaseLayout title="Projects — Sankalp Gulati">
@@ -42,18 +47,21 @@ const sorted = [...allProjects].sort((a, b) => b.year - a.year);
     <div class="projects-grid" id="projectsGrid">
       {sorted.map(p => (
         <div
-          class="project-card"
+          class:list={['project-card', { 'project-card--pinned': 'pinned' in p && p.pinned }]}
           data-topic={p.topic}
           data-category={p.category}
+          data-pinned={('pinned' in p && p.pinned) ? 'true' : 'false'}
+          data-year={p.year}
         >
           <div class="card-header">
             <div>
               <h3 class="card-title">{p.title}</h3>
               <p class="card-subtitle">{p.subtitle}</p>
             </div>
-            {'award' in p && p.award && (
-              <span class="award-badge">🏆 {p.award}</span>
-            )}
+            <div class="card-badges">
+              {'pinned' in p && p.pinned && <span class="pinned-badge">Active</span>}
+              {'award' in p && p.award && <span class="award-badge">🏆 {p.award}</span>}
+            </div>
           </div>
           <p class="card-desc">{p.description}</p>
           <div class="card-foot">
@@ -89,15 +97,38 @@ const sorted = [...allProjects].sort((a, b) => b.year - a.year);
 
   let active = { topic: 'all', category: 'all' };
 
+  function isDefaultView() {
+    return active.topic === 'all' && active.category === 'all';
+  }
+
+  function reorder() {
+    const pinned = isDefaultView();
+    const sorted = [...cards].sort((a, b) => {
+      if (pinned) {
+        const ap = a.dataset.pinned === 'true' ? 1 : 0;
+        const bp = b.dataset.pinned === 'true' ? 1 : 0;
+        if (ap !== bp) return bp - ap;
+      }
+      return parseInt(b.dataset.year!) - parseInt(a.dataset.year!);
+    });
+    sorted.forEach(card => grid.appendChild(card));
+    // Show/hide pinned badge
+    cards.forEach(card => {
+      const badge = card.querySelector<HTMLElement>('.pinned-badge');
+      if (badge) badge.style.display = pinned ? '' : 'none';
+    });
+  }
+
   document.querySelectorAll<HTMLElement>('.filter-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const filterType = btn.dataset.filter as 'topic' | 'category';
       const value = btn.dataset.value!;
 
-      // Update active state for this group
       document.querySelectorAll(`.filter-btn[data-filter="${filterType}"]`).forEach(b => b.classList.remove('filter-btn--active'));
       btn.classList.add('filter-btn--active');
       active[filterType] = value;
+
+      reorder();
 
       let visible = 0;
       cards.forEach(card => {
@@ -173,6 +204,21 @@ const sorted = [...allProjects].sort((a, b) => b.year - a.year);
     justify-content: space-between;
     align-items: flex-start;
     gap: 10px;
+  }
+  .card-badges { display: flex; flex-direction: column; gap: 4px; align-items: flex-end; flex-shrink: 0; }
+  .pinned-badge {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #059669;
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    padding: 2px 7px;
+    border-radius: 10px;
+  }
+  .project-card--pinned {
+    border-color: #d1fae5;
   }
   .card-title { font-size: 15px; font-weight: 700; margin: 0; color: var(--navy); }
   .card-subtitle { font-size: 11px; color: #6b7280; margin: 3px 0 0; }
