@@ -1,5 +1,18 @@
 [
   {
+    "id": "bodhi-blog",
+    "type": "blog",
+    "topic": "Healthcare AI",
+    "company": "EkaCare",
+    "title": "BODHI: Bharat Ontology for Disease & Healthcare Informatics",
+    "description": "Introducing BODHI — an open clinical knowledge graph for grounding healthcare AI in verified, India-specific clinical data.",
+    "date": "2026-04-13",
+    "year": 2026,
+    "url": "https://info.eka.care/services/bodhi-bharat-ontology-for-disease-healthcare-informatics",
+    "urlStatus": "ok",
+    "tags": ["Knowledge Graph", "Clinical", "NLP"]
+  },
+  {
     "id": "parrotlet-a2",
     "type": "blog",
     "topic": "Healthcare AI",
