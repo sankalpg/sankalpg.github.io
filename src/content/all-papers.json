@@ -1,5 +1,44 @@
 [
   {
+    "id": "parrotlet-open-models",
+    "type": "blog",
+    "topic": "Healthcare AI",
+    "company": "EkaCare",
+    "title": "Releasing Parrotlet Open Models: Open Weights for Medical Document Intelligence",
+    "description": "Open-weight releases from the Parrotlet family, making purpose-built medical document intelligence models freely available.",
+    "date": "2026-08-10",
+    "year": 2026,
+    "url": "https://info.eka.care/services/releasing-parrotlet-open-models-open-weights-for-medical-document-intelligence",
+    "urlStatus": "ok",
+    "tags": ["Vision", "LLM", "Open Weights"]
+  },
+  {
+    "id": "parrotlet-a25-pro",
+    "type": "blog",
+    "topic": "Healthcare AI",
+    "company": "EkaCare",
+    "title": "Benchmark Update: Releasing Parrotlet-a 2.5 Pro",
+    "description": "Benchmark update accompanying the release of Parrotlet-a 2.5 Pro, our latest medical speech recognition model.",
+    "date": "2026-08-10",
+    "year": 2026,
+    "url": "https://info.eka.care/services/benchmark-update-releasing-parrotlet-a-2-5-pro",
+    "urlStatus": "ok",
+    "tags": ["ASR", "LLM", "Evaluation"]
+  },
+  {
+    "id": "beyond-frontier",
+    "type": "blog",
+    "topic": "Healthcare AI",
+    "company": "EkaCare",
+    "title": "Beyond Frontier Models: Grounding AI in Indian Clinical Reality",
+    "description": "Introducing MedAI MCP tools that ground frontier LLMs in Indian drug databases, treatment protocols, and medical calculators — with open evaluation datasets in KARMA.",
+    "date": "2026-04-28",
+    "year": 2026,
+    "url": "https://info.eka.care/services/beyond-frontier-models-grounding-ai-in-indian-clinical-reality",
+    "urlStatus": "ok",
+    "tags": ["LLM", "Evaluation", "Clinical"]
+  },
+  {
     "id": "bodhi-blog",
     "type": "blog",
     "topic": "Healthcare AI",
